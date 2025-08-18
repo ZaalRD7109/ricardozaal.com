@@ -3,154 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ricardo Zaal — A voice of faith, purpose, and vision</title>
-  <meta name="description" content="I help Kingdom-minded people rebuild their lives and income through business and calling — restoring dignity, not begging for blessings.">
+  <title>Ricardo Zaal — Faith, Purpose & Legacy</title>
+  <meta name="description" content="I help Kingdom-minded people rebuild their lives and income through business and calling — restoring dignity with bold action.">
   <style>
     :root{
-      --bg-deep:#0a0f1c;        /* near black/blue */
-      --bg-mid:#0f1e34;         /* deep navy */
-      --teal:#08c4c9;           /* your turquoise */
-      --teal-strong:#06a9ad;    /* darker turquoise */
-      --ink:#e8f6f7;            /* soft white */
-      --ink-dim:#b7c7d1;
-      --maxw:1120px;
-      --radius:18px;
+      --bg1:#0f2027; --bg2:#203a43; --bg3:#2c5364; /* dark turquoise blend */
+      --teal:#08c4c9; --teal-dark:#069ca0;
+      --ink:#eaf6f7; --ink-dim:#b7c7d1;
       --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+      --maxw:1120px;
     }
-
-    /* Reset + base */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink);
-      background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(8,196,201,.25), transparent 60%),
-        radial-gradient(800px 500px at -10% 20%, rgba(8,196,201,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg-deep), var(--bg-mid) 60%, #0b1630 100%);
+      background: linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
       min-height:100dvh;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw); margin-inline:auto; padding-inline:20px}
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg, rgba(10,15,28,.75), rgba(10,15,28,.35));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.3px;
-    }
-    .logo{
-      width:36px; height:36px; border-radius:50%;
-      background:
-        conic-gradient(from 210deg at 50% 50%, #04333d, #09c6cf, #04333d);
-      box-shadow:inset 0 0 0 2px rgba(255,255,255,.08), var(--shadow);
-      display:grid; place-items:center; color:white; font-weight:800;
-    }
-    .menu a{opacity:.9; margin-left:22px}
-    .menu a:hover{opacity:1; color:var(--teal)}
-
-    /* Hero */
-    .hero{
-      padding: clamp(70px, 12vh, 120px) 0 80px;
       text-align:center;
     }
-    .title{
-      font-size: clamp(38px, 6vw, 56px);
-      line-height:1.05; margin:0 0 18px;
-      text-shadow: 0 8px 40px rgba(8,196,201,.25);
-    }
-    .tag{
-      color:var(--ink);
-      opacity:.95;
-      font-size: clamp(16px, 2.2vw, 20px);
-      max-width: 780px;
-      margin: 0 auto 32px;
-    }
-    .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    a{color:inherit; text-decoration:none}
+    header{padding:clamp(60px,10vh,120px) 20px 40px}
+    h1{font-size:clamp(38px,6vw,56px); margin:0 0 14px}
+    .tag{font-size:clamp(16px,2.2vw,20px); opacity:.95; max-width:780px; margin:0 auto 28px}
+    .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:8px}
     .btn{
-      padding:14px 22px; border-radius:12px; font-weight:700; letter-spacing:.2px;
-      border:1px solid transparent; cursor:pointer; transition:.25s ease; display:inline-block;
-      box-shadow: var(--shadow);
+      display:inline-block; padding:14px 22px; border-radius:12px; font-weight:700; letter-spacing:.2px;
+      border:1px solid transparent; box-shadow:var(--shadow); transition:.25s ease; cursor:pointer
     }
-    .btn-primary{ background:linear-gradient(180deg, var(--teal), var(--teal-strong)); color:#03161a }
+    .btn-primary{ background:linear-gradient(180deg,var(--teal),var(--teal-dark)); color:#03272a }
     .btn-primary:hover{ transform:translateY(-2px); filter:saturate(110%) brightness(1.05)}
-    .btn-ghost{ background:transparent; color:var(--ink); border-color:rgba(255,255,255,.25) }
+    .btn-ghost{ background:transparent; color:var(--ink); border-color:rgba(255,255,255,.25)}
     .btn-ghost:hover{ border-color:var(--teal); color:var(--teal)}
 
-    /* Sections */
-    section{padding:80px 0}
+    main section{padding:70px 20px}
+    .container{max-width:var(--maxw); margin:0 auto}
     .card{
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius);
+      padding:28px; box-shadow:var(--shadow);
+      margin:0 auto; max-width:900px;
+      text-align:left
     }
-    h2{margin:0 0 14px; font-size: clamp(26px, 4vw, 34px)}
-    .lead{color:var(--ink-dim); font-size:18px; line-height:1.6}
+    h2{font-size:clamp(26px,4vw,34px); margin:0 0 10px; color:var(--teal)}
+    p.lead{font-size:18px; line-height:1.6; color:var(--ink-dim)}
 
-    /* Contact */
-    .contact-grid{
-      display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top:18px
+    /* floating socials */
+    .social-fab{
+      position:fixed; right:18px; bottom:18px; z-index:20;
+      display:flex; flex-direction:column; gap:10px;
     }
-    .contact-item{display:flex; gap:14px; align-items:center}
-    .icon{
-      width:42px; height:42px; border-radius:10px;
-      background:rgba(8,196,201,.12); display:grid; place-items:center;
-      border:1px solid rgba(8,196,201,.35)
+    .fab{
+      width:48px; height:48px; border-radius:14px; display:grid; place-items:center;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+      box-shadow:var(--shadow); transition:.2s ease;
     }
-    footer{color:var(--ink-dim); padding:40px 0 60px; text-align:center; font-size:14px}
+    .fab:hover{ transform:translateY(-2px); background:rgba(255,255,255,.12); border-color:rgba(8,196,201,.55)}
+    .fab svg{display:block}
+
+    footer{color:var(--ink-dim); padding:40px 0 60px; font-size:14px}
   </style>
 </head>
 <body>
 
-  <!-- Header / simple nav -->
+  <!-- HERO -->
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">RZ</div>
-        <div>Ricardo Zaal</div>
-      </div>
-      <nav class="menu" aria-label="Main">
-        <a href="#about">Learn More</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <h1>Ricardo Zaal</h1>
+    <p class="tag">
+      A voice of faith, purpose, and vision — helping people discover calling, rebuild income through business,
+      and restore dignity with bold action.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#about">Learn More</a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://seed.impactseed.co.za" target="_blank" rel="noopener">
+        Start with Impact Seed
+      </a>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ABOUT -->
   <main>
-    <section class="hero container" id="home">
-      <h1 class="title">Ricardo Zaal</h1>
-      <p class="tag">
-        A voice of faith, purpose, and vision. Helping people discover their calling and
-        build a life that inspires generations.
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#about">Learn More</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <div class="card">
-          <h2>What I Do</h2>
+          <h2>About Ricardo</h2>
           <p class="lead">
-            I help <strong>Kingdom-minded people</strong> rebuild their lives and income through
-            business and calling — restoring dignity, not begging for blessings. If you’re ready to
-            step into a fuller, faith-driven future, you’re in the right place.
+            I help <strong>Kingdom-minded people</strong> rebuild their lives and income through business and calling —
+            not begging for blessings, but building with wisdom, courage, and dignity. If you’re ready to align faith with
+            practical action and legacy, you’re in the right place.
           </p>
         </div>
       </div>
@@ -163,55 +106,54 @@
           <h2>Let’s Connect</h2>
           <p class="lead">Choose what’s easiest for you:</p>
 
-          <div class="contact-grid">
-
-            <div class="contact-item">
-              <div class="icon" aria-hidden="true">
-                <!-- Mail icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M4 6h16v12H4z" stroke="#08c4c9" stroke-width="1.6" />
-                  <path d="M4 6l8 6 8-6" stroke="#08c4c9" stroke-width="1.6" />
-                </svg>
-              </div>
-              <div>
-                <div>Email</div>
-                <a href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo" class="lead">info@ricardozaal.com</a>
-              </div>
+          <div style="display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:18px; text-align:left">
+            <div>
+              <strong>Email</strong><br>
+              <a href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo">info@ricardozaal.com</a>
             </div>
-
-            <div class="contact-item">
-              <div class="icon" aria-hidden="true">
-                <!-- WhatsApp icon -->
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="9" stroke="#08c4c9" stroke-width="1.6"/>
-                  <path d="M8.5 9.5c.3 2.9 2.6 5.2 5.5 5.5l1.5-1.5-2.3-1 .9-1.8-1.8-.9-1 2.3-1.8-.9-1.5 1.3Z" fill="#08c4c9"/>
-                </svg>
-              </div>
-              <div>
-                <div>WhatsApp</div>
-                <a class="lead" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect."
-                   target="_blank" rel="noopener">+27&nbsp;61&nbsp;856&nbsp;0854</a>
-              </div>
+            <div>
+              <strong>WhatsApp</strong><br>
+              <a href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect." target="_blank" rel="noopener">
+                +27 61 856 0854
+              </a>
             </div>
-
-          </div>
-
-          <div class="cta" style="margin-top:22px">
-            <a class="btn btn-primary" href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo">Email Me</a>
-            <a class="btn btn-ghost" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp Me</a>
+            <div>
+              <strong>Telegram</strong><br>
+              <!-- This works on devices with Telegram installed -->
+              <a href="tg://resolve?phone=27618560854">Open in Telegram</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    © <span id="y"></span> Ricardo Zaal. All rights reserved.
-  </footer>
+  <!-- FLOATING SOCIAL ICONS (fixed bottom-right) -->
+  <div class="social-fab" aria-label="Social links">
+    <!-- Facebook -->
+    <a class="fab" href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H9v4h2v6h4v-6h2l1-4h-3V8c0-.6.4-1 1-1Z" fill="#08c4c9"/></svg>
+    </a>
+    <!-- TikTok -->
+    <a class="fab" href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 3h3c.2 1.8 1.5 3.2 3 3.6V10c-1.9-.1-3.6-.7-5-1.7v6.4a5.7 5.7 0 1 1-3.6-5.3V12a3.2 3.2 0 1 0 2 3V3Z" fill="#08c4c9"/></svg>
+    </a>
+    <!-- Instagram -->
+    <a class="fab" href="https://www.instagram.com/ricardo.zaal" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="#08c4c9" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#08c4c9" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.25" fill="#08c4c9"/></svg>
+    </a>
+    <!-- Email -->
+    <a class="fab" href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo" aria-label="Email">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="#08c4c9" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="#08c4c9" stroke-width="1.6"/></svg>
+    </a>
+    <!-- WhatsApp -->
+    <a class="fab" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect." target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#08c4c9" stroke-width="1.6"/><path d="M8.5 9.5c.3 2.9 2.6 5.2 5.5 5.5l1.5-1.5-2.3-1 .9-1.8-1.8-.9-1 2.3-1.8-.9-1.5 1.3Z" fill="#08c4c9"/></svg>
+    </a>
+  </div>
 
-  <script>
-    // Auto-year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="y"></span> Ricardo Zaal. All rights reserved.</footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
