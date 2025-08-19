@@ -1,99 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ricardo Zaal — Faith, Purpose & Bold Action</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ricardo Zaal — A Voice of Faith, Purpose & Vision</title>
+  <meta name="description" content="Ricardo Zaal helps Kingdom-minded people rebuild their lives and income through business and calling — restoring dignity with bold faith and practical action." />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Ricardo Zaal helps people discover calling, rebuild income through business, and restore dignity with bold, Kingdom-minded action." />
-  <link rel="canonical" href="https://ricardozaal.com/" />
-  <meta name="robots" content="index,follow" />
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ricardozaal.com/" />
-  <meta property="og:title" content="Ricardo Zaal — Faith, Purpose & Bold Action" />
-  <meta property="og:description" content="Discover calling, rebuild income through business, and restore dignity with bold action." />
-  <meta property="og:image" content="https://ricardozaal.com/og-image.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ricardo Zaal — Faith, Purpose & Bold Action" />
-  <meta name="twitter:description" content="Discover calling, rebuild income through business, and restore dignity with bold action." />
-  <meta name="twitter:image" content="https://ricardozaal.com/og-image.jpg" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ricardo Zaal",
-    "url": "https://ricardozaal.com/",
-    "description": "A voice of faith, purpose, and vision — helping people discover calling, rebuild income through business, and restore dignity with bold action.",
-    "email": "info@ricardozaal.com",
-    "sameAs": [
-      "https://www.facebook.com/ricardozaal",
-      "https://www.tiktok.com/@ricardodzaal",
-      "https://www.instagram.com/ricardo.zaal",
-      "https://seed.impactseed.co.za",
-      "https://fountaingrace.org"
-    ]
-  }
-  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 2rem;
-      max-width: 800px;
+    :root{
+      --bg1:#0e1b4d;
+      --bg2:#1f3a8a;
+      --accent:#ffd166;
+      --text:#eef2ff;
+      --muted:#c7d2fe;
     }
-    h1, h2 {
-      color: #222;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,sans-serif; color:var(--text);
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden; scroll-behavior:smooth;
     }
-    a {
-      color: #0044cc;
-      text-decoration: none;
+    .glow{
+      position:fixed; inset:-20vmax;
+      background:
+        radial-gradient(40vmax 30vmax at 20% 60%, rgba(14,165,233,.35), transparent 60%),
+        radial-gradient(35vmax 35vmax at 80% 30%, rgba(99,102,241,.35), transparent 60%),
+        radial-gradient(25vmax 25vmax at 60% 80%, rgba(253,224,71,.25), transparent 60%);
+      filter:blur(30px);
+      animation: drift 18s ease-in-out infinite alternate;
+      z-index:0;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
+    @keyframes drift{0%{transform:translate(-2%,-1%)}50%{transform:translate(1%,2%)}100%{transform:translate(-1%,1%)}}
+
+    .wrap{position:relative; z-index:1; min-height:100%; display:grid; place-items:center; padding:6rem 1.25rem}
+    .hero{text-align:center; max-width:900px;}
+    .badge{display:inline-block;padding:.4rem .75rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:.8rem;text-transform:uppercase;color:var(--muted)}
+    h1{margin:.9rem 0 .5rem;font-size:clamp(2.2rem,5vw+1rem,4rem);font-weight:800}
+    .name{color:var(--accent)}
+    .sub{font-size:1.25rem;color:var(--muted);max-width:46ch;margin:0 auto 2rem}
+    .cta{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+    .btn{padding:.9rem 1.15rem;border-radius:.9rem;font-weight:600;cursor:pointer;text-decoration:none}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#ffc84d);color:#222}
+    .btn.ghost{border:1px solid rgba(255,255,255,.3);color:var(--text);background:rgba(255,255,255,.05)}
+
+    section{padding:6rem 1.5rem;text-align:center;max-width:800px;margin:auto}
+    section h2{font-size:2rem;margin-bottom:1rem;color:var(--accent)}
+
+    footer{color:rgba(255,255,255,.6);font-size:.85rem;text-align:center;padding:1rem}
   </style>
 </head>
 <body>
-  <h1>Ricardo Zaal</h1>
-  <p>A voice of faith, purpose, and vision — helping people discover calling, rebuild income through business, and restore dignity with bold action.</p>
-  <p><a href="https://seed.impactseed.co.za">Learn More Contact Start with Impact Seed</a></p>
+  <div class="glow" aria-hidden="true"></div>
 
-  <h2>About Ricardo</h2>
-  <p>I help <strong>Kingdom-minded people</strong> rebuild their lives and income through business and calling — not begging for blessings, but building with wisdom, courage, and dignity. If you’re looking for practical action and legacy, you’re in the right place.</p>
-  <p>Prefer church resources? Visit <a href="https://fountaingrace.org">fountaingrace.org</a>.</p>
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">Kingdom Builder • Coach • Pastor</span>
+      <h1><span class="name">Ricardo Zaal</span></h1>
+      <p class="sub">A voice of <strong>faith, purpose, and vision</strong>—helping people discover their calling, rebuild income through business, and <strong>restore dignity</strong> with bold action.</p>
+      <div class="cta">
+        <a class="btn primary" href="#about">Learn More</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </section>
+  </main>
 
-  <h2>Quick Links</h2>
-  <p>
-    <a href="https://www.facebook.com/ricardozaal">Facebook</a> ·
-    <a href="https://www.tiktok.com/@ricardodzaal">TikTok</a> ·
-    <a href="https://www.instagram.com/ricardo.zaal">Instagram</a> ·
-    <a href="https://seed.impactseed.co.za">Impact Seed</a> ·
-    <a href="https://fountaingrace.org">Fountain of Grace</a> ·
-    <a href="mailto:info@ricardozaal.com">Contact</a>
-  </p>
+  <!-- About section -->
+  <section id="about">
+    <h2>About Ricardo</h2>
+    <p>I am passionate about guiding people to discover their God-given calling and unlock new streams of income with purpose. Through faith and practical steps, I help restore dignity, build businesses, and leave a lasting legacy for generations to come.</p>
+  </section>
 
-  <h2>Let’s Connect</h2>
-  <p>Choose what’s easiest for you:</p>
-  <p>
-    Email: <a href="mailto:info@ricardozaal.com">info@ricardozaal.com</a><br />
-    WhatsApp: <a href="https://wa.me/27618560854">+27 61 856 0854</a><br />
-    Telegram: <a href="https://t.me/ricardozaal">Open in Telegram</a>
-  </p>
+  <!-- Contact section -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>You can reach me directly at <a href="mailto:info@ricardozaal.com">info@ricardozaal.com</a>.  
+    I’d love to hear from you.</p>
+  </section>
 
   <footer>
-    © 2025 Ricardo Zaal. All rights reserved.
+    © <span id="y"></span> Ricardo Zaal · All rights reserved
   </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
