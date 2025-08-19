@@ -1,263 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ====== BASIC META ====== -->
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ricardo Zaal — Faith, Purpose & Vision</title>
-  <meta name="description" content="Ricardo Zaal helps people discover calling, rebuild income through business, and restore dignity with bold action and faith." />
-  <link rel="canonical" href="https://www.ricardozaal.com/" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b3b3c" />
-
-  <!-- ====== OPEN GRAPH / TWITTER ====== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ricardo Zaal" />
-  <meta property="og:url" content="https://www.ricardozaal.com/" />
-  <meta property="og:title" content="Ricardo Zaal — Faith, Purpose & Vision" />
-  <meta property="og:description" content="Helping people discover their calling, rebuild income through business, and restore dignity with bold action." />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ricardo Zaal — Faith, Purpose & Vision" />
-  <meta name="twitter:description" content="Helping people discover their calling, rebuild income through business, and restore dignity with bold action." />
-
-  <!-- ====== STRUCTURED DATA (SEO) ====== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Ricardo Zaal",
-    "url":"https://www.ricardozaal.com/",
-    "email":"mailto:info@ricardozaal.com",
-    "sameAs":[
-      "https://www.facebook.com/ricardozaal",
-      "https://www.tiktok.com/@ricardodzaal",
-      "https://www.instagram.com/ricardo.zaal/",
-      "https://seed.impactseed.co.za/",
-      "https://fountaingrace.org/"
-    ],
-    "knowsAbout":["faith","purpose","calling","business","entrepreneurship","coaching"]
-  }
-  </script>
-
-  <!-- ====== STYLE (kept same vibe) ====== -->
+  <title>Ricardo Zaal — Faith, Purpose & Legacy</title>
+  <meta name="description" content="I help Kingdom-minded people rebuild their lives and income through business and calling — restoring dignity with bold action.">
   <style>
     :root{
-      --bg-1:#062a2b;
-      --bg-2:#0b3b3c;
-      --bg-3:#041f21;
-      --card:#0c3133;
-      --card-2:#0f3f41;
-      --text:#e7fbf7;
-      --muted:#a9d9d2;
-      --accent:#29d6c7;   /* turquoise */
-      --accent-2:#21b3a6;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+      --bg1:#0f2027; --bg2:#203a43; --bg3:#2c5364; /* dark turquoise blend */
+      --teal:#08c4c9; --teal-dark:#069ca0;
+      --ink:#eaf6f7; --ink-dim:#b7c7d1;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+      --maxw:1120px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html{scroll-behavior:smooth}
     body{
-      margin:0;
-      color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      line-height:1.55;
-      background:
-        radial-gradient(1300px 500px at 50% -10%, #17484a 0%, var(--bg-2) 50%, var(--bg-1) 70%, var(--bg-3) 100%);
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background: linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+      min-height:100dvh;
+      text-align:center;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9; text-decoration:underline}
-    .wrap{max-width:960px; margin:0 auto; padding:28px 18px 80px}
-
-    /* HERO */
-    .hero{
-      margin-top:42px;
-      padding:46px 28px;
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.06);
-    }
-    .title{
-      font-size: clamp(36px, 5.5vw, 64px);
-      font-weight: 800;
-      letter-spacing:.3px;
-      margin:0 0 14px 0;
-    }
-    .tag{
-      font-size: clamp(16px, 2.3vw, 22px);
-      color:var(--muted);
-      max-width:44ch;
-      margin:0 0 28px;
-    }
-    .cta-row{display:flex; gap:16px; flex-wrap:wrap}
+    a{color:inherit; text-decoration:none}
+    header{padding:clamp(60px,10vh,120px) 20px 40px}
+    h1{font-size:clamp(38px,6vw,56px); margin:0 0 14px}
+    .tag{font-size:clamp(16px,2.2vw,20px); opacity:.95; max-width:780px; margin:0 auto 28px}
+    .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:8px}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:14px 22px; border-radius:14px; font-weight:700; letter-spacing:.2px;
-      border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04);
-      color:var(--text); text-decoration:none; transition:.2s ease;
+      display:inline-block; padding:14px 22px; border-radius:12px; font-weight:700; letter-spacing:.2px;
+      border:1px solid transparent; box-shadow:var(--shadow); transition:.25s ease; cursor:pointer
     }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-outline{background:rgba(255,255,255,.06)}
-    .btn-accent{
-      background:linear-gradient(180deg, var(--accent), var(--accent-2));
-      color:#003230; border:none; text-shadow:0 1px 0 rgba(255,255,255,.25);
-    }
+    .btn-primary{ background:linear-gradient(180deg,var(--teal),var(--teal-dark)); color:#03272a }
+    .btn-primary:hover{ transform:translateY(-2px); filter:saturate(110%) brightness(1.05)}
+    .btn-ghost{ background:transparent; color:var(--ink); border-color:rgba(255,255,255,.25)}
+    .btn-ghost:hover{ border-color:var(--teal); color:var(--teal)}
 
-    /* SECTIONS / CARDS */
-    section{margin-top:34px}
+    main section{padding:70px 20px}
+    .container{max-width:var(--maxw); margin:0 auto}
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
       border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow);
+      padding:28px; box-shadow:var(--shadow);
+      margin:0 auto; max-width:900px;
+      text-align:left
     }
-    h2{font-size:clamp(26px,3.6vw,42px); margin:0 0 14px}
-    .list{display:grid; gap:14px}
-    .pill{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:16px 18px; border-radius:14px; background:var(--card); border:1px solid rgba(255,255,255,.06);
+    h2{font-size:clamp(26px,4vw,34px); margin:0 0 10px; color:var(--teal)}
+    p.lead{font-size:18px; line-height:1.6; color:var(--ink-dim)}
+
+    /* floating socials */
+    .social-fab{
+      position:fixed; right:18px; bottom:18px; z-index:20;
+      display:flex; flex-direction:column; gap:10px;
     }
-    .pill strong{font-weight:800}
-    .pill span{color:var(--muted)}
-    .contact-grid{display:grid; gap:16px}
-    @media (min-width:720px){
-      .contact-grid{grid-template-columns:repeat(3, 1fr)}
+    .fab{
+      width:48px; height:48px; border-radius:14px; display:grid; place-items:center;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+      box-shadow:var(--shadow); transition:.2s ease;
     }
-    .contact-card{
-      padding:18px; border-radius:14px; background:var(--card-2);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .contact-card a{font-weight:700}
-    footer{
-      margin-top:50px; color:var(--muted); text-align:center
-    }
-    .icons{display:flex; gap:14px; justify-content:center; margin-top:14px}
-    .icon-btn{
-      display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center;
-      border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.07)
-    }
-    .icon{width:22px; height:22px; fill:var(--text)}
+    .fab:hover{ transform:translateY(-2px); background:rgba(255,255,255,.12); border-color:rgba(8,196,201,.55)}
+    .fab svg{display:block}
+
+    footer{color:var(--ink-dim); padding:40px 0 60px; font-size:14px}
   </style>
 </head>
 <body>
-  <!-- Hidden SVG icons (no external files) -->
-  <svg width="0" height="0" style="position:absolute"><defs>
-    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.7V12h2.7V9.8c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.7h-1.4c-1.4 0-1.8.9-1.8 1.8V12h3l-.5 2.9h-2.5v7A10 10 0 0 0 22 12z"/></symbol>
-    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M21 9.6a7 7 0 0 1-4.3-1.5v6.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.7a3 3 0 1 0 2-2.8V2.6A7.2 7.2 0 0 0 18 5.7c.9.6 1.9.9 3 .9v3z"/></symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.6-2.7a1 1 0 1 1-1.4 1.4 1 1 0 0 1 1.4-1.4z"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 3.2V17h18V8.2l-8.2 5.1a2 2 0 0 1-1.6 0L3 8.2z"/></symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20 3.9A10 10 0 0 0 4.4 17.8L3 22l4.4-1.2A10 10 0 1 0 20 3.9zm-8 15.2a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-2.4.7.6-2.3-.2-.4a8.2 8.2 0 1 1 6.4 3.3zm4.5-6.3c-.2-.1-1.3-.7-1.5-.8-.2-.1-.3-.1-.5.1l-.7.9c-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.7-1s-1.2-1.6-1.3-1.8c-.1-.2 0-.4.1-.5l.4-.4c.2-.2.2-.3.3-.5 0-.1 0-.3 0-.4l-.5-1.2c-.1-.4-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.5 2.3 3.7 3.2.5.2.9.3 1.2.4.5.1 1 .1 1.3.1.4 0 1.3-.5 1.5-1.1.2-.6.2-1.1.2-1.2 0-.2-.2-.3-.4-.4z"/></symbol>
-    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M9.2 15.3 9 19.7l3.6-3.6 5.8 4.3 3.6-16.4L2.1 11.3l5.5 1.9L19 6.6z"/></symbol>
-  </defs></svg>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <header class="hero" id="top">
-      <h1 class="title">Ricardo Zaal</h1>
-      <p class="tag">
-        A voice of faith, purpose, and vision — helping people discover calling,
-        rebuild income through business, and restore dignity with bold action.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-outline" href="#about">Learn More</a>
-        <a class="btn btn-outline" href="#contact">Contact</a>
-        <a class="btn btn-accent" href="https://seed.impactseed.co.za" target="_blank" rel="noopener">Start with Impact Seed</a>
-      </div>
-    </header>
+  <!-- HERO -->
+  <header>
+    <h1>Ricardo Zaal</h1>
+    <p class="tag">
+      A voice of faith, purpose, and vision — helping people discover calling, rebuild income through business,
+      and restore dignity with bold action.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#about">Learn More</a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://seed.impactseed.co.za" target="_blank" rel="noopener">
+        Start with Impact Seed
+      </a>
+    </div>
+  </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="card">
-      <h2>About Ricardo</h2>
-      <p>
-        I help <strong>Kingdom‑minded people</strong> rebuild their lives and income through
-        business and calling — not begging for blessings, but building with wisdom,
-        courage, and dignity. If you’re ready to align faith with practical action
-        and legacy, you’re in the right place.
-      </p>
-      <p>Prefer church resources? Visit <a href="https://fountaingrace.org" target="_blank" rel="noopener">fountaingrace.org</a>.</p>
-    </section>
-
-    <!-- QUICK LINKS -->
-    <section class="card" aria-labelledby="links">
-      <h2 id="links">Quick Links</h2>
-      <div class="list">
-        <div class="pill">
-          <div><strong>Facebook</strong><span> &nbsp;@ricardozaal</span></div>
-          <a href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener">Open</a>
-        </div>
-        <div class="pill">
-          <div><strong>TikTok</strong><span> &nbsp;@ricardodzaal</span></div>
-          <a href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener">Open</a>
-        </div>
-        <div class="pill">
-          <div><strong>Instagram</strong><span> &nbsp;@ricardo.zaal</span></div>
-          <a href="https://www.instagram.com/ricardo.zaal/" target="_blank" rel="noopener">Open</a>
-        </div>
-        <div class="pill">
-          <div><strong>Impact Seed</strong><span> &nbsp;seed.impactseed.co.za</span></div>
-          <a href="https://seed.impactseed.co.za" target="_blank" rel="noopener">Open</a>
-        </div>
-        <div class="pill">
-          <div><strong>Fountain of Grace</strong><span> &nbsp;fountaingrace.org</span></div>
-          <a href="https://fountaingrace.org" target="_blank" rel="noopener">Open</a>
+  <!-- ABOUT -->
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="card">
+          <h2>About Ricardo</h2>
+          <p class="lead">
+            I help <strong>Kingdom-minded people</strong> rebuild their lives and income through business and calling —
+            not begging for blessings, but building with wisdom, courage, and dignity. If you’re ready to align faith with
+            practical action and legacy, you’re in the right place.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="card">
-      <h2>Let’s Connect</h2>
-      <p>Choose what’s easiest for you:</p>
+    <section id="contact">
+      <div class="container">
+        <div class="card">
+          <h2>Let’s Connect</h2>
+          <p class="lead">Choose what’s easiest for you:</p>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <strong>Email</strong><br/>
-          <a href="mailto:info@ricardozaal.com">info@ricardozaal.com</a>
-        </div>
-        <div class="contact-card">
-          <strong>WhatsApp</strong><br/>
-          <a href="https://wa.me/27618560854" target="_blank" rel="noopener">+27 61 856 0854</a>
-        </div>
-        <div class="contact-card">
-          <strong>Telegram</strong><br/>
-          <a href="https://t.me/+27618560854" target="_blank" rel="noopener">Open in Telegram</a>
-          <div style="color:var(--muted); font-size:.92rem; margin-top:6px">
-            If the link doesn’t open, add <strong>+27 61 856 0854</strong> in Telegram and message.
+          <div style="display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:18px; text-align:left">
+            <div>
+              <strong>Email</strong><br>
+              <a href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo">info@ricardozaal.com</a>
+            </div>
+            <div>
+              <strong>WhatsApp</strong><br>
+              <a href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect." target="_blank" rel="noopener">
+                +27 61 856 0854
+              </a>
+            </div>
+            <div>
+              <strong>Telegram</strong><br>
+              <!-- This works on devices with Telegram installed -->
+              <a href="tg://resolve?phone=27618560854">Open in Telegram</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <footer>
-      <div>© <span id="y">2025</span> Ricardo Zaal. All rights reserved.</div>
-      <div class="icons" aria-label="Social links">
-        <a class="icon-btn" href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg class="icon"><use href="#i-facebook"/></svg>
-        </a>
-        <a class="icon-btn" href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg class="icon"><use href="#i-tiktok"/></svg>
-        </a>
-        <a class="icon-btn" href="https://www.instagram.com/ricardo.zaal/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg class="icon"><use href="#i-instagram"/></svg>
-        </a>
-        <a class="icon-btn" href="mailto:info@ricardozaal.com" aria-label="Email">
-          <svg class="icon"><use href="#i-mail"/></svg>
-        </a>
-        <a class="icon-btn" href="https://wa.me/27618560854" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg class="icon"><use href="#i-whatsapp"/></svg>
-        </a>
-        <a class="icon-btn" href="https://t.me/+27618560854" target="_blank" rel="noopener" aria-label="Telegram">
-          <svg class="icon"><use href="#i-telegram"/></svg>
-        </a>
-      </div>
-    </footer>
   </main>
 
-  <script>
-    // keep the footer year current
-    const y = document.getElementById('y');
-    if (y) y.textContent = new Date().getFullYear();
-  </script>
+  <!-- FLOATING SOCIAL ICONS (fixed bottom-right) -->
+  <div class="social-fab" aria-label="Social links">
+    <!-- Facebook -->
+    <a class="fab" href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 8h2V4h-2c-2.2 0-4 1.8-4 4v2H9v4h2v6h4v-6h2l1-4h-3V8c0-.6.4-1 1-1Z" fill="#08c4c9"/></svg>
+    </a>
+    <!-- TikTok -->
+    <a class="fab" href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 3h3c.2 1.8 1.5 3.2 3 3.6V10c-1.9-.1-3.6-.7-5-1.7v6.4a5.7 5.7 0 1 1-3.6-5.3V12a3.2 3.2 0 1 0 2 3V3Z" fill="#08c4c9"/></svg>
+    </a>
+    <!-- Instagram -->
+    <a class="fab" href="https://www.instagram.com/ricardo.zaal" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="#08c4c9" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#08c4c9" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.25" fill="#08c4c9"/></svg>
+    </a>
+    <!-- Email -->
+    <a class="fab" href="mailto:info@ricardozaal.com?subject=Hello%20Ricardo" aria-label="Email">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="#08c4c9" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="#08c4c9" stroke-width="1.6"/></svg>
+    </a>
+    <!-- WhatsApp -->
+    <a class="fab" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%E2%80%99d%20like%20to%20connect." target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#08c4c9" stroke-width="1.6"/><path d="M8.5 9.5c.3 2.9 2.6 5.2 5.5 5.5l1.5-1.5-2.3-1 .9-1.8-1.8-.9-1 2.3-1.8-.9-1.5 1.3Z" fill="#08c4c9"/></svg>
+    </a>
+  </div>
+
+  <footer>© <span id="y"></span> Ricardo Zaal. All rights reserved.</footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
