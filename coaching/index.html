@@ -485,7 +485,7 @@ footer a:hover{color:var(--accent)}
     <div class="paths">
       <div class="path bad">
         <h4>You did nothing</h4>
-        <p>It is November. You are still the strong one. You are still doing the sums in the car. The thing you have never said is still not said, it is just three months heavier, and you have gone one more season giving your family the leftovers.</p>
+        <p>It is <span class="m3">November</span>. You are still the strong one. You are still doing the sums in the car. The thing you have never said is still not said, it is just three months heavier, and you have gone one more season giving your family the leftovers.</p>
       </div>
       <div class="path good">
         <h4>You booked the call</h4>
@@ -536,5 +536,16 @@ footer a:hover{color:var(--accent)}
   <a class="btn btn-main" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%20read%20your%20page.%20I%20would%20like%20to%20book%20the%20free%20call." target="_blank" rel="noopener">Book my free call</a>
 </div>
 
+<script>
+(function(){
+  // The close talks about three months from now. Never let it go stale.
+  var names=["January","February","March","April","May","June","July",
+             "August","September","October","November","December"];
+  var now=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Johannesburg"}));
+  var m=(now.getMonth()+3)%12;
+  var els=document.querySelectorAll(".m3");
+  for(var i=0;i<els.length;i++){els[i].textContent=names[m];}
+})();
+</script>
 </body>
 </html>
