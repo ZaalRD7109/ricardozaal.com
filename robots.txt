@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ricardozaal.com/sitemap.xml
+
+# Full plain-text summary for AI systems
+# https://ricardozaal.com/llms.txt
