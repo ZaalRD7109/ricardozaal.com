@@ -1,231 +1,549 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- ------- REQUIRED META ------- -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ricardo Zaal - Faith, Purpose and Vision</title>
-  <meta name="description" content="Ricardo Zaal helps people discover calling, rebuild income through business, and restore dignity with bold action. Learn more, connect, or start with Impact Seed." />
-  <link rel="canonical" href="https://ricardozaal.com/"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ricardo Zaal | Coaching for men who cannot say it out loud</title>
+<meta name="description" content="Ricardo Zaal is a coach for men in Pretoria North, South Africa. One on one sessions for pressure, grief and burnout. Start with a free 20 minute call." />
+<link rel="canonical" href="https://ricardozaal.com/"/>
 
-  <!-- ------- OPEN GRAPH / TWITTER ------- -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ricardozaal.com/" />
-  <meta property="og:title" content="Ricardo Zaal - Faith, Purpose and Vision" />
-  <meta property="og:description" content="Helping people discover calling, rebuild income through business, and restore dignity with bold action." />
-  <!-- If you add a share image later, set this: -->
-  <!-- <meta property="og:image" content="https://ricardozaal.com/og-image.jpg" /> -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ricardozaal.com/" />
+<meta property="og:title" content="Ricardo Zaal | Coaching for men who cannot say it out loud" />
+<meta property="og:description" content="You are the one everybody leans on. So who do you lean on? No judgement, no lectures, no report card." />
+<meta property="og:image" content="https://ricardozaal.com/img/ricardo.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ricardo Zaal | Coaching for men who cannot say it out loud" />
+<meta name="twitter:description" content="You are the one everybody leans on. So who do you lean on?" />
+<meta name="twitter:image" content="https://ricardozaal.com/img/ricardo.jpg" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ricardo Zaal - Faith, Purpose and Vision" />
-  <meta name="twitter:description" content="Helping people discover calling, rebuild income through business, and restore dignity with bold action." />
-  <!-- <meta name="twitter:image" content="https://ricardozaal.com/og-image.jpg" /> -->
-
-  <!-- ------- JSON-LD (ORGANIZATION / PERSON) ------- -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ricardo Zaal",
-    "url": "https://ricardozaal.com/",
-    "email": "info@ricardozaal.com",
-    "sameAs": [
-      "https://www.facebook.com/ricardozaal",
-      "https://www.tiktok.com/@ricardodzaal",
-      "https://www.instagram.com/ricardo.zaal",
-      "https://fountaingrace.org/",
-      "https://seed.impactseed.co.za/"
-    ],
-    "description": "A voice of faith, purpose, and vision - helping people discover calling, rebuild income through business, and restore dignity with bold action."
-  }
-  </script>
-
-  <!-- ------- FONTS & BASIC RESET ------- -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- ------- STYLES ------- -->
-  <style>
-    :root{
-      --bg-1:#0c1f27;     /* deep teal */
-      --bg-2:#072c35;     /* darker cyan/teal */
-      --accent:#20d3c2;   /* turquoise accent */
-      --accent-2:#12a7a0; /* button hover */
-      --panel:#123543;    /* card bg */
-      --text:#eaf7f6;     /* near-white */
-      --muted:#b7d7d4;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius:22px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;scroll-behavior:smooth}
-    body{
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: radial-gradient(1400px 800px at 50% -200px, #214f64 0%, var(--bg-2) 40%, var(--bg-1) 100%) fixed;
-      background-color:var(--bg-1);
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1100px;margin:0 auto;padding:48px 22px 72px}
-    header{padding:84px 0 32px;text-align:center}
-    h1{
-      font-size:60px;line-height:1.05;margin:0 0 18px;
-      font-weight:800;letter-spacing:.2px;
-      text-shadow:0 4px 24px rgba(0,0,0,.4);
-    }
-    .lead{
-      max-width:900px;margin:0 auto 28px;font-size:20px;line-height:1.6;color:var(--muted)
-    }
-    .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:10px}
-    .btn{
-      padding:14px 22px;border-radius:14px;border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      color:var(--text);font-weight:700;box-shadow:var(--shadow);transition:.2s transform, .25s background;
-      backdrop-filter: blur(6px);
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{
-      background:linear-gradient(180deg, var(--accent) 0%, #0bd1bf 100%);
-      color:#0b1e23;border:none;
-    }
-    .btn-primary:hover{background:linear-gradient(180deg, var(--accent-2), var(--accent))}
-    .section{
-      margin-top:46px;padding:26px 26px;border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
-    }
-    .section h2{
-      margin:6px 0 16px;font-size:34px;letter-spacing:.3px
-    }
-    .section p{margin:0 0 12px;color:var(--text);opacity:.96}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{
-      background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;
-      box-shadow: var(--shadow);
-    }
-    .card h3{margin:0 0 8px}
-    .footer{
-      margin-top:46px;text-align:center;color:var(--muted);font-size:14px;opacity:.9
-    }
-
-    /* Floating socials */
-    .float-socials{
-      position:fixed;right:16px;top:120px;display:flex;flex-direction:column;gap:12px;z-index:9
-    }
-    .soc{
-      width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);
-      transition:transform .15s ease, background .25s ease; backdrop-filter: blur(6px);
-    }
-    .soc:hover{transform:translateY(-2px); background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.08))}
-    .soc svg{width:22px;height:22px;fill:var(--accent)}
-
-    @media (max-width:900px){
-      h1{font-size:44px}
-      .lead{font-size:18px}
-      .cards{grid-template-columns:1fr}
-      .float-socials{top:auto;bottom:18px;right:18px;flex-direction:row}
-    }
-  </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L334TBN090"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L334TBN090');
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ricardo Zaal Coaching","url":"https://ricardozaal.com/","image":"https://ricardozaal.com/img/ricardo.jpg","areaServed":"ZA","address":{"@type":"PostalAddress","addressLocality":"Pretoria North","addressRegion":"Gauteng","addressCountry":"ZA"},"founder":{"@type":"Person","name":"Ricardo Zaal","url":"https://ricardozaal.com/"},"description":"One on one coaching for men carrying pressure, loss or pretence they cannot say out loud."}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"We talk about the number on the call, once I know what you actually need. The call itself costs nothing."}},
+{"@type":"Question","name":"What happens on the first call?","acceptedAnswer":{"@type":"Answer","text":"You talk and I listen. About twenty minutes. At the end I tell you honestly whether I am the right man for this."}},
+{"@type":"Question","name":"I have tried this before and it did not work.","acceptedAnswer":{"@type":"Answer","text":"Most men who come to Ricardo Zaal have. Usually they were handed somebody else's system. This works the other way around, starting from your life rather than a framework."}},
+{"@type":"Question","name":"Do we have to meet in person?","acceptedAnswer":{"@type":"Answer","text":"No. Most of it happens on a call, so it works anywhere in South Africa. In person in Pretoria North if you prefer."}},
+{"@type":"Question","name":"Is this confidential?","acceptedAnswer":{"@type":"Answer","text":"Yes. What you say stays with Ricardo Zaal and goes nowhere else."}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Ricardo Zaal","url":"https://ricardozaal.com/","image":"https://ricardozaal.com/img/ricardo.jpg","jobTitle":"Coach","description":"Coach and pastor in Pretoria North, South Africa. Works one on one with men carrying pressure, grief or pretence they cannot talk about elsewhere.","address":{"@type":"PostalAddress","addressLocality":"Pretoria North","addressRegion":"Gauteng","addressCountry":"ZA"},"sameAs":["https://www.tiktok.com/@ricardodzaal","https://www.facebook.com/ricardozaal","https://www.instagram.com/ricardo.zaal"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#04161c; --bg:#07222a; --bg-soft:#0b2c36; --panel:#0e3441;
+  --line:rgba(255,255,255,.10); --accent:#20d3c2; --accent-dk:#0fb5a6;
+  --text:#eef8f7; --muted:#a9cbc8; --shadow:0 24px 60px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.62;padding-bottom:76px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.shell{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(4,22,28,.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .shell{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:17px}
+.brand span{color:var(--accent)}
+.navlinks{display:none;gap:26px;font-size:15px;color:var(--muted);font-weight:500}
+.navlinks a:hover{color:var(--text)}
+.nav .mini{display:none;padding:10px 18px;border-radius:10px;background:var(--accent);
+  color:#04231f;font-weight:800;font-size:14px}
+
+.btn{display:inline-block;text-align:center;font-weight:800;font-size:17px;
+  padding:18px 30px;border-radius:14px;transition:.18s transform,.18s background}
+.btn:active{transform:translateY(2px)}
+.btn-main{background:var(--accent);color:#04231f;box-shadow:0 16px 38px rgba(32,211,194,.26)}
+.btn-main:hover{background:var(--accent-dk)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04)}
+
+.hero{padding:60px 0 54px;background:
+  radial-gradient(900px 520px at 78% -8%, rgba(32,211,194,.16) 0%, transparent 62%),
+  linear-gradient(180deg,#05202a 0%, var(--ink) 100%)}
+.kicker{display:inline-block;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;
+  font-weight:800;color:var(--accent);margin-bottom:20px}
+h1{font-size:clamp(34px,7.8vw,62px);line-height:1.06;letter-spacing:-.032em;font-weight:900;margin:0 0 22px}
+h1 em{font-style:normal;color:var(--accent)}
+.sub{font-size:clamp(17px,4.2vw,20.5px);color:var(--muted);margin:0 0 32px;max-width:600px}
+.hero-btns{display:flex;flex-direction:column;gap:12px;max-width:420px}
+.reassure{margin:16px 0 0;font-size:14.5px;color:var(--muted)}
+.hero-photo{display:none}
+.hero-id{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.hero-id img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid rgba(32,211,194,.5)}
+.hero-id b{display:block;font-size:16px;font-weight:800}
+.hero-id span{display:block;font-size:13.5px;color:var(--muted)}
+
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+.strip .shell{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:30px 20px}
+.stat b{display:block;font-size:26px;font-weight:900;letter-spacing:-.02em;color:var(--accent);line-height:1.1}
+.stat span{font-size:13.5px;color:var(--muted);display:block;margin-top:5px}
+
+section{padding:62px 0}
+.alt{background:var(--bg)}
+h2{font-size:clamp(26px,5.9vw,38px);line-height:1.16;letter-spacing:-.026em;font-weight:900;margin:0 0 22px}
+.eyebrow{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);font-weight:800;margin:0 0 14px}
+p{font-size:17.5px;margin:0 0 18px}
+.big-p{font-size:20px}
+.muted{color:var(--muted)}
+
+ul.ticks{list-style:none;margin:0;padding:0}
+ul.ticks li{position:relative;padding-left:34px;margin-bottom:17px;font-size:17.5px}
+ul.ticks li:last-child{margin-bottom:0}
+ul.ticks li:before{content:"";position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 5px rgba(32,211,194,.14)}
+
+.grid{display:grid;gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:20px;letter-spacing:-.015em}
+.card p{font-size:16.5px;color:var(--muted);margin:0}
+.stepno{width:42px;height:42px;border-radius:12px;background:rgba(32,211,194,.14);
+  color:var(--accent);font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+
+.quote{background:linear-gradient(180deg,rgba(32,211,194,.10),rgba(32,211,194,.03));
+  border:1px solid rgba(32,211,194,.26);border-radius:20px;padding:30px 26px;margin:0}
+.quote p{font-size:19px;line-height:1.62;margin:0 0 16px}
+.quote .tr{font-size:15.5px;color:var(--muted);margin:0;padding-top:16px;border-top:1px solid var(--line)}
+
+.about-photo{width:150px;height:150px;border-radius:20px;object-fit:cover;
+  border:1px solid var(--line);box-shadow:var(--shadow);margin-bottom:26px}
+
+details{border-bottom:1px solid var(--line);padding:20px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:17.5px;
+  display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--accent);font-size:25px;line-height:1;font-weight:700;flex:0 0 auto}
+details[open] summary:after{content:"\2212"}
+details p{margin:15px 0 0;color:var(--muted);font-size:16.5px}
+
+.final{background:radial-gradient(700px 420px at 50% 0%, rgba(32,211,194,.15) 0%, transparent 66%),var(--bg);
+  text-align:center;border-top:1px solid var(--line)}
+.final .btn{width:100%;max-width:420px}
+
+.offer{background:var(--panel);border:1px solid rgba(32,211,194,.3);border-radius:22px;padding:30px 24px;box-shadow:var(--shadow)}
+.offer h3{font-size:23px;margin:0 0 6px;letter-spacing:-.02em}
+.offer .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:800;margin:0 0 18px}
+.inc{list-style:none;margin:0;padding:0}
+.inc li{padding:16px 0;border-bottom:1px solid var(--line)}
+.inc li:last-child{border-bottom:none;padding-bottom:0}
+.inc b{display:block;font-size:17px;margin-bottom:4px}
+.inc span{font-size:15.5px;color:var(--muted)}
+.guarantee{background:linear-gradient(180deg,rgba(32,211,194,.12),rgba(32,211,194,.03));
+  border:2px solid rgba(32,211,194,.4);border-radius:22px;padding:30px 26px;text-align:center}
+.guarantee h3{font-size:24px;margin:0 0 14px;letter-spacing:-.02em}
+.guarantee p{margin:0 0 12px;font-size:17.5px}
+.guarantee p:last-child{margin-bottom:0;color:var(--muted);font-size:16px}
+.paths{display:grid;gap:16px;text-align:left;margin:0 0 34px}
+.path{border-radius:18px;padding:24px;border:1px solid var(--line)}
+.path.bad{background:rgba(255,255,255,.03)}
+.path.good{background:rgba(32,211,194,.09);border-color:rgba(32,211,194,.32)}
+.path h4{margin:0 0 12px;font-size:17px;letter-spacing:.4px;text-transform:uppercase;font-size:13px;color:var(--muted)}
+.path.good h4{color:var(--accent)}
+.path p{margin:0;font-size:17px}
+.answer{background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.answer .shell{padding:30px 20px}
+.answer p{margin:0;font-size:18px;max-width:820px}
+.answer p strong{color:var(--text)}
+.byline{font-size:14px;color:var(--muted);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+table.cmp{width:100%;border-collapse:collapse;margin:22px 0 0;font-size:16px}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:13px 14px;text-align:left;vertical-align:top}
+table.cmp th{background:rgba(32,211,194,.10);font-weight:800;color:var(--text)}
+table.cmp td{color:var(--muted)}
+.tablewrap{overflow-x:auto}
+.note{border:1px dashed rgba(255,255,255,.2);border-radius:16px;padding:20px;
+  font-size:16px;color:var(--muted);margin-top:44px}
+.note strong{color:var(--text)}
+
+footer{background:var(--ink);border-top:1px solid var(--line);padding:48px 0 40px;font-size:15px;color:var(--muted)}
+.fgrid{display:grid;gap:30px;margin-bottom:32px}
+footer h4{color:var(--text);font-size:14px;text-transform:uppercase;letter-spacing:1.6px;margin:0 0 14px}
+footer a{display:block;margin-bottom:10px}
+footer a:hover{color:var(--accent)}
+.legal{border-top:1px solid var(--line);padding-top:22px;font-size:13.5px;opacity:.8}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  background:rgba(4,22,28,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.bar .btn{width:100%;padding:16px;font-size:16.5px}
+
+@media(min-width:820px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .navlinks{display:flex}
+  .nav .mini{display:inline-block}
+  .hero{padding:92px 0 80px}
+  .hero .shell{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero-btns{flex-direction:row}
+  .hero-id{display:none}
+  .hero-photo{display:block;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .strip .shell{grid-template-columns:repeat(4,1fr);padding:36px 20px}
+  section{padding:90px 0}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .paths{grid-template-columns:1fr 1fr}
+  .offer{padding:40px}
+  .fgrid{grid-template-columns:2fr 1fr 1fr}
+  .about-wrap{display:grid;grid-template-columns:190px 1fr;gap:38px;align-items:start}
+  .about-photo{width:190px;height:190px;margin-bottom:0}
+}
+</style>
 </head>
-<body>
+<body id="top">
 
-  <!-- Floating Socials -->
-  <nav class="float-socials" aria-label="Social links">
-    <a class="soc" href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.49 17.53 2 12 2S2 6.49 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.5-3.88 3.78-3.88 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34v7.03C18.34 21.25 22 17.08 22 12.06z"/></svg>
-    </a>
-    <a class="soc" href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener" aria-label="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M21 8.5a6.5 6.5 0 0 1-4.6-1.9v6.71a5.31 5.31 0 1 1-5.31-5.31c.4 0 .78.05 1.15.15v2.58a2.71 2.71 0 1 0 1.71 2.54V2h2.38a4.11 4.11 0 0 0 4.07 3.51z"/></svg>
-    </a>
-    <a class="soc" href="https://www.instagram.com/ricardo.zaal" target="_blank" rel="noopener" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5 1.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
-    </a>
-    <a class="soc" href="mailto:info@ricardozaal.com" aria-label="Email">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v1.2l10 6.25L22 7.2V6a2 2 0 0 0-2-2zm2 5.4-9.35 5.84a1.5 1.5 0 0 1-1.3 0L2 9.4V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9.4z"/></svg>
-    </a>
-    <a class="soc" href="https://wa.me/27618560854" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M20 3.9A10 10 0 0 0 3.3 17.9L2 22l4.2-1.1A10 10 0 0 0 12 22 10 10 0 0 0 20 3.9zm-7.9 15.7c-1.7 0-3.3-.5-4.7-1.4l-.3-.2-2.8.7.8-2.7-.2-.3A7.9 7.9 0 1 1 12.1 19.6zm4.7-5.9c-.3-.2-1.7-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.1 7.1 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.7 1.1 2.9s2.1 3.3 5 4.5c.7.3 1.3.5 1.8.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4s.2-1.2.2-1.4-.2-.3-.5-.4z"/></svg>
-    </a>
-  </nav>
+<nav class="nav">
+  <div class="shell">
+    <a class="brand" href="#top">Ricardo <span>Zaal</span></a>
+    <div class="navlinks">
+      <a href="#you">Is this you</a>
+      <a href="#how">How I work</a>
+      <a href="#offer">What you get</a>
+      <a href="#about">About me</a>
+      <a href="#faq">Questions</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <a class="mini" href="#start">Book my free call</a>
+  </div>
+</nav>
 
-  <main class="wrap">
-    <header>
-      <h1>Ricardo Zaal</h1>
-      <p class="lead">
-        A voice of faith, purpose, and vision - helping people discover calling, rebuild
-        income through business, and restore dignity with bold action.
-      </p>
-      <div class="cta-row">
-        <a href="/coaching/" class="btn btn-primary">Work with me one on one</a>
-        <a href="#about" class="btn">Learn More</a>
-        <a href="#contact" class="btn">Contact</a>
-        <a href="https://seed.impactseed.co.za/" class="btn" target="_blank" rel="noopener">Start with Impact Seed</a>
+<header class="hero">
+  <div class="shell">
+    <div>
+      <span class="kicker">Ricardo Zaal, one on one</span>
+      <h1>You are the one everybody leans on. <em>So who do you lean on?</em></h1>
+      <p class="sub">I work with men who are carrying something heavy and have nowhere to put it down. In ninety minutes you will say the thing out loud, and you will leave knowing your next move. No judgement, no lecture, no report card.</p>
+      <div class="hero-btns">
+        <a class="btn btn-main" href="#start">Book my free call</a>
+        <a class="btn btn-ghost" href="#offer">See what you get</a>
       </div>
-    </header>
-
-    <section id="about" class="section" aria-labelledby="about-h">
-      <h2 id="about-h">About Ricardo</h2>
-      <p>
-        I help <strong>Kingdom-minded people</strong> rebuild their lives and income through business and calling -
-        not begging for blessings, but building with wisdom, courage, and dignity. If you’re ready to align faith
-        with practical action and legacy, you’re in the right place.
-      </p>
-      <p style="margin-top:14px;color:var(--muted)">
-        Prefer church resources? Visit <a href="https://fountaingrace.org/" target="_blank" rel="noopener" style="color:var(--accent)">fountaingrace.org</a>.
-      </p>
-    </section>
-
-    <section id="links" class="section" aria-labelledby="links-h" style="margin-top:26px">
-      <h2 id="links-h">Quick Links</h2>
-      <div class="cards">
-        <a class="card" href="/coaching/"><h3>Coaching</h3><p>Work with me one on one</p></a>
-        <a class="card" href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener"><h3>Facebook</h3><p>@ricardozaal</p></a>
-        <a class="card" href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener"><h3>TikTok</h3><p>@ricardodzaal</p></a>
-        <a class="card" href="https://www.instagram.com/ricardo.zaal" target="_blank" rel="noopener"><h3>Instagram</h3><p>@ricardo.zaal</p></a>
-        <a class="card" href="https://seed.impactseed.co.za/" target="_blank" rel="noopener"><h3>Impact Seed</h3><p>seed.impactseed.co.za</p></a>
-        <a class="card" href="https://fountaingrace.org/" target="_blank" rel="noopener"><h3>Fountain of Grace</h3><p>fountaingrace.org</p></a>
-        <a class="card" href="#contact"><h3>Contact</h3><p>Email · WhatsApp · Telegram</p></a>
+      <p class="reassure">Twenty minutes with me. It costs nothing and you are not signing up for anything.</p>
+      <div class="hero-id">
+        <img src="/img/ricardo.jpg" alt="Ricardo Zaal, coach for men, Pretoria North" width="640" height="640" loading="lazy" />
+        <div><b>Ricardo Zaal</b><span>Pretoria North, South Africa</span></div>
       </div>
-    </section>
+    </div>
+    <div class="hero-photo">
+      <img src="/img/ricardo.jpg" alt="Ricardo Zaal, coach for men, Pretoria North" width="640" height="640" />
+    </div>
+  </div>
+</header>
 
-    <section id="contact" class="section" aria-labelledby="contact-h" style="margin-top:26px">
-      <h2 id="contact-h">Let’s Connect</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:info@ricardozaal.com" style="color:var(--accent)">info@ricardozaal.com</a></p>
-        </div>
-        <div class="card">
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/27618560854" target="_blank" rel="noopener" style="color:var(--accent)">+27 61 856 0854</a></p>
-        </div>
-        <div class="card">
-          <h3>Telegram</h3>
-          <!-- If you later have a specific t.me username, replace the link below -->
-          <p><a href="tg://resolve?phone=27618560854" style="color:var(--accent)">Open in Telegram</a></p>
-          <p style="color:var(--muted);font-size:14px;margin-top:6px">
-            If Telegram link doesn’t open, add <strong>+27 61 856 0854</strong> in Telegram and message.
-          </p>
-        </div>
+<div class="answer">
+  <div class="shell">
+    <p><strong>Ricardo Zaal is a coach for men, based in Pretoria North, South Africa.</strong> He works one on one with men carrying pressure, grief, burnout or pretence they cannot talk about anywhere else. Sessions run ninety minutes, on a call anywhere in South Africa or in person in Pretoria, and every man starts with a free twenty minute conversation. He takes five men at a time.</p>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="shell">
+    <div class="stat"><b>28 years</b><span>Inside real businesses, so I know the week you are living</span></div>
+    <div class="stat"><b>26+ years</b><span>Sitting with people at the worst moment of their lives</span></div>
+    <div class="stat"><b>12 years</b><span>A pastor, and 10 of those running my own business</span></div>
+    <div class="stat"><b>5 men</b><span>The most I work with at one time. Right now there is room.</span></div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section id="you">
+  <div class="shell narrow">
+    <p class="eyebrow">Let me say it before you have to</p>
+    <h2>Nobody is worried about you. That is the problem.</h2>
+    <p class="big-p">You are the one people phone when it falls apart. You have carried men through things that would have finished them. You are steady, and everybody has quietly decided that means you are fine.</p>
+    <p class="muted">So when it is your turn, there is no queue at your door. There is just you, sitting in the car a minute longer than you need to, working out the numbers before you walk in and greet everybody like a man with no problems.</p>
+    <p class="muted">You have read the books. You have done a course or two. You know what you should be doing. And you still lie there at half past one going over the same thing, and by the time the sun comes up you have put the face back on.</p>
+    <p class="muted">It is not weakness. You have simply never had one room where you were allowed to stop performing. Not one. That is all this is.</p>
+  </div>
+</section>
+
+<!-- IS THIS YOU -->
+<section class="alt">
+  <div class="shell narrow">
+    <p class="eyebrow">Am I the right man for you</p>
+    <h2>We should talk if</h2>
+    <ul class="ticks">
+      <li>You are the strong one, and nobody ever asks how you are doing.</li>
+      <li>You are performing all week and the people at home get whatever is left over.</li>
+      <li>You look successful from the outside and you know exactly what it is costing you.</li>
+      <li>You lost someone, the world moved on months ago, and you did not.</li>
+      <li>There is not one man alive you can be completely honest with.</li>
+      <li>You have done the courses and read the books and you are still stuck.</li>
+    </ul>
+    <p class="big-p" style="margin-top:28px">If two of those landed, you are the man I built this for. Book the call.</p>
+    <p class="muted">And if you want somebody to hand you a plan and tell you what to do, do not book it. That is not what happens in this room.</p>
+  </div>
+</section>
+
+<!-- NO JUDGEMENT -->
+<section>
+  <div class="shell narrow">
+    <p class="eyebrow">Before you worry about it</p>
+    <h2>I have never judged a man yet and I am not going to start with you.</h2>
+    <p class="big-p">I do not care what you drink, what you have done, what you are still doing, or how far away from where you should be you think you are.</p>
+    <p class="muted">Every person is walking their own road at their own pace, and it has never been my job to grade anybody. I have sat with men in the middle of things they were sure would make me get up and leave. I did not leave. Nothing you say to me is going to change how I look at you.</p>
+    <p class="muted">And this is real life, not religion. We deal with your money, your marriage, your work, your temper, your grief and the Monday morning you are dreading. Whatever you believe or do not believe is yours, and it stays yours.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES -->
+<section class="alt">
+  <div class="shell">
+    <div class="narrow" style="margin-bottom:38px">
+      <p class="eyebrow">What actually changes</p>
+      <h2>You stop managing it and start moving.</h2>
+      <p class="muted">Not motivation. Motivation is finished by Thursday. This is what men tell me is different.</p>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h3>You say it out loud</h3>
+        <p>The thing you have never told anybody gets said, in a room where nothing bad happens afterwards. Most men have never had that once in their lives.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>You put the face down</h3>
+        <p>You stop holding up the version of yourself everybody expects. It is exhausting, and the people at home have been paying for it.</p>
+      </div>
+      <div class="card">
+        <h3>You know your next move</h3>
+        <p>Not a ten year plan. One thing, this week, that you actually do. Then the next one. That is how men get out, and I have not seen another way.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <p class="footer">© <span id="y"></span> Ricardo Zaal. All rights reserved.</p>
-  </main>
+<!-- HOW I WORK -->
+<section id="how">
+  <div class="shell">
+    <div class="narrow" style="margin-bottom:38px">
+      <p class="eyebrow">How I work</p>
+      <h2>I do not hand you advice. I ask until you hear your own answer.</h2>
+      <p class="muted">Advice is just what I would have done. It fits my life and not yours, and you drop it the first week things get hard. The answer you find yourself is the one you still have in six months.</p>
+      <p class="muted">So I ask, and I let the room go quiet instead of filling it for you. When something out of my own life is useful you get it at the end, as a light and never as a map.</p>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <div class="stepno">1</div>
+        <h3>A free call</h3>
+        <p>Twenty minutes. You talk, I listen. At the end I tell you straight whether I am the right man for this, and what it costs if we carry on.</p>
+      </div>
+      <div class="card">
+        <div class="stepno">2</div>
+        <h3>One session</h3>
+        <p>Ninety minutes, just the two of us. Most men get further in that one conversation than in a year of turning it over at night.</p>
+      </div>
+      <div class="card">
+        <div class="stepno">3</div>
+        <h3>Twelve weeks</h3>
+        <p>Six sessions if you want to go further. Long enough for something real to change, short enough that you cannot hide inside it.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Current year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<!-- VOICE -->
+<section class="alt">
+  <div class="shell narrow">
+    <p class="eyebrow">What I sound like</p>
+    <h2>This is what I sent my own brother the day he was breaking.</h2>
+    <blockquote class="quote">
+      <p>Ek gaan nie preek en se hoe goed God is nie, maar ek vra wees mens. Huil as jy moet. Skreeu as jy moet. Vloek God as jy moet. Doen net dit wat jou beter gaan laat voel.</p>
+      <p class="tr">I am not going to lecture you. I am asking you to be human. Cry if you must. Scream if you must. Swear at God if you must. Just do the thing that is going to make you better.</p>
+    </blockquote>
+    <p class="muted" style="margin-top:24px">That is not a slogan for a website. That is how I talk to a man who is in it, and it is what you will get from me.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="shell narrow">
+    <p class="eyebrow">About me</p>
+    <h2>I am not asking you anything I have not had to answer myself.</h2>
+    <p class="byline">Written by Ricardo Zaal, coach and pastor, Pretoria North, South Africa. Last updated 1 August 2026.</p>
+    <div class="about-wrap">
+      <img class="about-photo" src="/img/ricardo.jpg" alt="Ricardo Zaal, coach for men, Pretoria North" width="640" height="640" />
+      <div>
+        <p>My name is Ricardo Zaal. I could give you a list of things that would make me sound impressive. What I would rather you know is that I have been where you are sitting, and I did not have anybody to phone.</p>
+        <p class="muted">I have worked inside businesses for twenty eight years, ten of those running my own, so I know the week you are actually living. Targets, month end, the drive home, the pressure you do not put down at the front door. I have pastored for twelve years alongside all of it, which means I have sat with people on the worst day of their lives more times than I can count.</p>
+        <p class="muted">On 10 July 2010 I lost my two sons, my mother and my stepfather. All four of them in one day, a few hours apart. I know what it is to sit in a room full of people who love you and want every single one of them to go home.</p>
+        <p class="muted">I have been broke. I chased money for years thinking that was the answer. I spent a fortune on courses and coaches looking for the thing that would finally make me feel like enough, and it was in none of them. I have stood in a room telling everybody I was fine while I was working out how to get to month end.</p>
+        <p class="muted">So there is very little you can put in front of me that I have not either lived or sat with.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer" class="alt">
+  <div class="shell narrow">
+    <p class="eyebrow">What you actually get</p>
+    <h2>The Room. Twelve weeks where you stop performing.</h2>
+    <p class="muted">You have never had one place where you could put it all down. This is that place, and it is built so you cannot drift out of it.</p>
+
+    <div class="offer">
+      <p class="tag">Included</p>
+      <h3>The Room</h3>
+      <ul class="inc">
+        <li><b>Six sessions of ninety minutes across twelve weeks</b><span>Enough time for something to actually change, and close enough together that you cannot quietly disappear between them.</span></li>
+        <li><b>A written intake before we start</b><span>So session one opens on the real thing instead of forty minutes of background. You start where it hurts, not at the beginning.</span></li>
+        <li><b>One action after every session, in writing</b><span>One thing, this week, that you actually do. You leave every session knowing exactly what your next move is.</span></li>
+        <li><b>A message a week between sessions, answered within two working days</b><span>For the Tuesday it hits you sideways. You are not sitting alone with it until the next session.</span></li>
+        <li><b>One emergency call inside the twelve weeks</b><span>If it goes bad, you get me within forty eight hours, outside of your sessions. Once, because I mean it.</span></li>
+        <li><b>A written close at the end</b><span>Where you started, where you are now, and what you carry on doing without me. So the change outlives the twelve weeks.</span></li>
+        <li><b>Me, personally, every single time</b><span>No assistant, no group call, no recorded module. Five men at a time is the reason I can promise you that.</span></li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:52px">Two ways to work with a coach who has been there</h2>
+    <div class="tablewrap">
+    <table class="cmp">
+      <thead><tr><th>&nbsp;</th><th>One conversation</th><th>The Room</th></tr></thead>
+      <tbody>
+        <tr><th>How long</th><td>One session of ninety minutes</td><td>Six sessions across twelve weeks</td></tr>
+        <tr><th>Best for</th><td>One thing you cannot see past</td><td>Something you have carried for years</td></tr>
+        <tr><th>Between sessions</th><td>Not applicable</td><td>A message a week, answered in two working days</td></tr>
+        <tr><th>Emergency call</th><td>No</td><td>Yes, once, within forty eight hours</td></tr>
+        <tr><th>You leave with</th><td>One action, in writing</td><td>An action every session and a written close</td></tr>
+        <tr><th>If it is not worth it</th><td>You do not pay for it</td><td>The first session still counts</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 style="margin-top:52px">What it costs.</h2>
+    <p>Work out what this year has already cost you. The nights you did not sleep. What your wife and your children have been getting instead of you. The chances you did not take because you were too tired to see them.</p>
+    <p>Against that, the number is small, and I will give it to you straight on the call once I know what you actually need. A man who wants one conversation and a man who wants twelve weeks are not the same job and I am not going to price you before I have listened to you.</p>
+    <p class="muted">There are five places. As of today there is room. When it is full you go on a list and you wait, because I would rather you wait than get half of me.</p>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section>
+  <div class="shell narrow">
+    <div class="guarantee">
+      <h3>If the first conversation is not worth it, you do not pay for it.</h3>
+      <p>Sit down with me for ninety minutes. At the end, if you tell me it was not worth your time and money, you pay nothing for that session. No argument, no awkwardness, no chasing you.</p>
+      <p>I can say that because I have watched what one honest conversation does to a man who has been carrying something alone. I am not asking you to trust me yet. I am asking you to test me once.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="shell narrow">
+    <p class="eyebrow">Before you ask</p>
+    <h2>The questions men actually ask me.</h2>
+
+    <details>
+      <summary>What does it cost?</summary>
+      <p>We talk about the number on the call, once I know what you need, because a man who needs one conversation and a man who needs twelve weeks are not the same job. The call itself costs you nothing.</p>
+    </details>
+    <details>
+      <summary>What happens on the first call?</summary>
+      <p>You talk and I listen. That is most of it. Near the end I will ask you a question or two, and then I tell you honestly whether I am the right man for this. If I am not, I will say so.</p>
+    </details>
+    <details>
+      <summary>I have tried this before and nothing changed.</summary>
+      <p>Most men who sit down with me have. Usually they were handed somebody else's system and told to fit into it. We start from your actual life instead, and we go at the thing underneath rather than the thing on the surface.</p>
+    </details>
+    <details>
+      <summary>I do not have time for this.</summary>
+      <p>You already spend more than ninety minutes a week going over it in your head at one in the morning. This is the same time, spent somewhere it actually moves.</p>
+    </details>
+    <details>
+      <summary>Do we have to meet in person?</summary>
+      <p>No. Most of it happens on a call, so it works wherever you are in the country. In person in Pretoria North if you would rather.</p>
+    </details>
+    <details>
+      <summary>What if I break down?</summary>
+      <p>Then you break down. It will not be the first time that has happened in front of me and I am not going to rush you through it. That is the point of having one room where you do not have to hold it together.</p>
+    </details>
+    <details>
+      <summary>How long before something is different?</summary>
+      <p>Something usually shifts in the first conversation, because saying it out loud changes it. The rest takes as long as it takes, and I will not sell you a timeline I cannot keep.</p>
+    </details>
+    <details>
+      <summary>Is this confidential?</summary>
+      <p>Yes. What you say to me stays with me.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="start" class="final">
+  <div class="shell narrow">
+    <h2>Ninety days from now, one of these two is true.</h2>
+    <div class="paths">
+      <div class="path bad">
+        <h4>You did nothing</h4>
+        <p>It is <span class="m3">November</span>. You are still the strong one. You are still doing the sums in the car. The thing you have never said is still not said, it is just three months heavier, and you have gone one more season giving your family the leftovers.</p>
+      </div>
+      <div class="path good">
+        <h4>You booked the call</h4>
+        <p>You said it out loud in week one and the roof did not fall in. You have moved on the thing you had been circling for years. Your wife has noticed. And for the first time in a long time you are not carrying it on your own.</p>
+      </div>
+    </div>
+    <p class="big-p">The difference between those two is twenty minutes on a phone, and it costs you nothing to find out.</p>
+    <a class="btn btn-main" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%20read%20your%20page.%20I%20would%20like%20to%20book%20the%20free%20call." target="_blank" rel="noopener">Yes, book my free call</a>
+    <p class="reassure" style="margin-top:18px">Twenty minutes on WhatsApp. You are not signing up for anything. Or email <a href="mailto:info@ricardozaal.com" style="color:var(--accent);font-weight:700">info@ricardozaal.com</a></p>
+
+    <div class="note">
+      <strong>If tonight is bad, do not wait for me.</strong> Phone SADAG on 0800 567 567, any hour, day or night. If you are in immediate danger, phone 10111.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:12px">Ricardo <span>Zaal</span></div>
+        <p style="margin:0;max-width:340px;font-size:15px">One on one coaching for men carrying something they cannot say out loud. Pretoria North, South Africa.</p>
+      </div>
+      <div>
+        <h4>This page</h4>
+        <a href="#you">Is this you</a>
+        <a href="#how">How I work</a>
+        <a href="#about">About me</a>
+        <a href="#faq">Questions</a>
+        <a href="#start">Book my free call</a>
+      </div>
+      <div>
+        <h4>Find me</h4>
+        <a href="/contact/">All my contact details</a>
+        <a href="https://www.tiktok.com/@ricardodzaal" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/ricardozaal" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/ricardo.zaal" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:info@ricardozaal.com">info@ricardozaal.com</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p style="margin:0">Copyright Ricardo Zaal. Coaching is not therapy or medical treatment. Anything you share with me stays between us.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-main" href="https://wa.me/27618560854?text=Hi%20Ricardo%2C%20I%20read%20your%20page.%20I%20would%20like%20to%20book%20the%20free%20call." target="_blank" rel="noopener">Book my free call</a>
+</div>
+
+<script>
+(function(){
+  // The close talks about three months from now. Never let it go stale.
+  var names=["January","February","March","April","May","June","July",
+             "August","September","October","November","December"];
+  var now=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Johannesburg"}));
+  var m=(now.getMonth()+3)%12;
+  var els=document.querySelectorAll(".m3");
+  for(var i=0;i<els.length;i++){els[i].textContent=names[m];}
+})();
+</script>
 </body>
 </html>

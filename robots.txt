@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ricardozaal.com/sitemap.xml
+Sitemap: https://ricardozaal.com/sitemap.xml
