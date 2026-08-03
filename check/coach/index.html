@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your checks - Ricardo Zaal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#04161c; --bg:#07222a; --panel:#0e3441; --panel2:#124351;
+    --line:rgba(255,255,255,.10); --accent:#20d3c2; --text:#eef8f7; --muted:#a9cbc8;
+    --warn:#ffb4a2; --ok:#7ee2a8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+  body{background:var(--bg); color:var(--text); min-height:100vh; display:flex; justify-content:center;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.5;}
+  .wrap{width:100%; max-width:540px; padding:20px 16px 48px;}
+  .brand{text-align:center; color:var(--accent); font-size:12px; letter-spacing:2.5px;
+    text-transform:uppercase; font-weight:800; margin-bottom:8px;}
+  h1{font-size:25px; font-weight:900; text-align:center; margin:4px 0 14px;}
+  h2{font-size:17px; font-weight:800; margin:0 0 8px;}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:17px 16px; margin-bottom:12px;}
+  p{color:var(--muted); font-size:15px; margin-bottom:9px;}
+  p strong{color:var(--text);}
+  .counts{display:flex; gap:8px; margin-bottom:14px;}
+  .cbox{flex:1; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:12px 8px; text-align:center;}
+  .cbox .n{font-size:24px; font-weight:900; color:var(--accent); line-height:1.1;}
+  .cbox .l{font-size:11px; color:var(--muted); margin-top:3px; line-height:1.3;}
+  .person{background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:15px 15px 13px; margin-bottom:11px;}
+  .person .nm{font-size:18px; font-weight:800;}
+  .person .when{font-size:12.5px; color:var(--muted); margin-bottom:8px;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:9px;}
+  .tag{font-size:12px; font-weight:700; padding:4px 9px; border-radius:20px;
+    background:var(--panel2); color:var(--text);}
+  .tag.hot{background:var(--accent); color:#04231f;}
+  .tag.mis{background:rgba(255,180,162,.16); color:var(--warn); border:1px solid rgba(255,180,162,.4);}
+  .row{font-size:14px; color:var(--muted); margin-bottom:4px;}
+  .row b{color:var(--text); font-weight:700;}
+  .acts{display:flex; gap:8px; margin-top:11px;}
+  .acts a{flex:1; text-decoration:none; text-align:center; border-radius:11px; padding:12px 8px;
+    font-size:15px; font-weight:800;}
+  .wa{background:var(--accent); color:#04231f;}
+  .mail{background:var(--panel2); color:var(--text); border:1px solid var(--line);}
+  .empty{text-align:center; color:var(--muted); padding:26px 10px; font-size:15px;}
+  input[type=text]{width:100%; font-size:16px; padding:13px; border-radius:12px;
+    border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--text);
+    outline:none; font-family:inherit;}
+  button{display:block; width:100%; border:none; border-radius:13px; padding:15px;
+    font-size:17px; font-weight:800; cursor:pointer; margin-top:11px; font-family:inherit;
+    background:var(--accent); color:#04231f;}
+  .guide h3{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);
+    font-weight:800; margin:14px 0 5px;}
+  .guide p{color:var(--text); font-size:15px;}
+  .hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Ricardo Zaal</div>
+  <h1>Your checks</h1>
+
+  <div id="scr-key" class="hidden">
+    <div class="card">
+      <p>Paste your coach key to open this page.</p>
+      <input type="text" id="keyin" placeholder="rzc-a-...">
+      <button id="btn-key">Open</button>
+    </div>
+  </div>
+
+  <div id="scr-main" class="hidden">
+    <div class="counts">
+      <div class="cbox"><div class="n" id="c-total">0</div><div class="l">checks taken</div></div>
+      <div class="cbox"><div class="n" id="c-new">0</div><div class="l">last 7 days</div></div>
+      <div class="cbox"><div class="n" id="c-mis">0</div><div class="l">aiming at the wrong wall</div></div>
+    </div>
+
+    <div class="card guide">
+      <h2>How to use this</h2>
+      <h3>Message him the same day</h3>
+      <p>He just told a stranger's website the truth about his week. That window closes fast. One honest WhatsApp on the same day beats a perfect one next week.</p>
+      <h3>Lead with what he wants, not what he scored</h3>
+      <p>Open with the thing he said he wants in ninety days. It is on his card. He will know you actually read it.</p>
+      <h3>If it says he is aiming at the wrong wall, say so gently</h3>
+      <p>That is the whole reason to talk. Not "you are wrong". Something like: you said you want Monday to stop undoing Sunday, but reading your answers, the heavier thing looks like carrying it with nobody to tell. Am I close.</p>
+      <h3>Do not coach on WhatsApp</h3>
+      <p>Get him to the twenty minute call. The message is the door, not the room.</p>
+    </div>
+
+    <div id="list"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var API = "https://rmurdihrhcxevtzkrbmx.supabase.co/functions/v1/rz-check";
+  var STORE = "rzcheck_admin_key";
+  var WALL_NAMES = { gap: "The Sunday Gap", stick: "The Measuring Stick", room: "The Locked Room" };
+  var DUR = {
+    under1: "Less than a year", "1to3": "One to three years",
+    over3: "More than three years", always: "As long as he can remember"
+  };
+  var el = function (id) { return document.getElementById(id); };
+
+  function waLink(phone) {
+    var d = String(phone || "").replace(/[^0-9]/g, "");
+    if (d.indexOf("00") === 0) d = d.slice(2);
+    if (d.indexOf("0") === 0) d = "27" + d.slice(1);
+    else if (d.indexOf("27") !== 0 && d.length <= 10) d = "27" + d;
+    return "https://wa.me/" + d;
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function when(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return "";
+    var days = Math.floor((Date.now() - d.getTime()) / 86400000);
+    var stamp = d.getDate() + " " +
+      ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getMonth()] +
+      " " + d.getFullYear();
+    if (days <= 0) return "Today, " + stamp;
+    if (days === 1) return "Yesterday, " + stamp;
+    return days + " days ago, " + stamp;
+  }
+
+  function render(rows) {
+    el("c-total").textContent = rows.length;
+    var weekAgo = Date.now() - 7 * 86400000;
+    el("c-new").textContent = rows.filter(function (r) {
+      return new Date(r.created_at).getTime() >= weekAgo;
+    }).length;
+    el("c-mis").textContent = rows.filter(function (r) { return r.mismatch; }).length;
+
+    var box = el("list");
+    box.innerHTML = "";
+    if (!rows.length) {
+      box.innerHTML = '<div class="card"><div class="empty">Nobody has taken it yet. Put the link in your TikTok bio and at the end of a video.</div></div>';
+      return;
+    }
+
+    rows.forEach(function (r) {
+      var t = r.totals || {};
+      var d = document.createElement("div");
+      d.className = "person";
+      var acts = "";
+      if (r.whatsapp) acts += '<a class="wa" href="' + esc(waLink(r.whatsapp)) + '" target="_blank" rel="noopener">WhatsApp him</a>';
+      if (r.email) acts += '<a class="mail" href="mailto:' + esc(r.email) + '">Email</a>';
+
+      d.innerHTML =
+        '<div class="nm">' + esc(r.name) + '</div>' +
+        '<div class="when">' + esc(when(r.created_at)) + '</div>' +
+        '<div class="tags">' +
+          '<span class="tag hot">' + esc(WALL_NAMES[r.top_wall] || r.top_wall || "") + '</span>' +
+          '<span class="tag">' + Number(r.against || 0) + ' of 9 against him</span>' +
+          (r.mismatch ? '<span class="tag mis">Aiming at the wrong wall</span>' : '') +
+        '</div>' +
+        '<div class="row"><b>Wants:</b> ' + esc(r.outcome) + '</div>' +
+        '<div class="row"><b>Been like this:</b> ' + esc(DUR[r.duration] || r.duration || "not said") + '</div>' +
+        '<div class="row"><b>Scores:</b> Gap ' + Number(t.gap || 0) + '/9, Stick ' + Number(t.stick || 0) +
+          '/9, Room ' + Number(t.room || 0) + '/9</div>' +
+        '<div class="row"><b>Contact:</b> ' + esc(r.whatsapp || "no number") +
+          (r.email ? ", " + esc(r.email) : "") +
+          (r.emailed_at ? " (result emailed)" : "") + '</div>' +
+        (acts ? '<div class="acts">' + acts + '</div>' : '');
+      box.appendChild(d);
+    });
+  }
+
+  function load(key) {
+    fetch(API + "?k=" + encodeURIComponent(key))
+      .then(function (res) {
+        if (!res.ok) throw new Error("bad key");
+        return res.json();
+      })
+      .then(function (rows) {
+        try { localStorage.setItem(STORE, key); } catch (e) { /* private mode */ }
+        el("scr-key").classList.add("hidden");
+        el("scr-main").classList.remove("hidden");
+        render(Array.isArray(rows) ? rows : []);
+      })
+      .catch(function () {
+        try { localStorage.removeItem(STORE); } catch (e) { /* ignore */ }
+        el("scr-main").classList.add("hidden");
+        el("scr-key").classList.remove("hidden");
+      });
+  }
+
+  el("btn-key").addEventListener("click", function () {
+    var k = el("keyin").value.trim();
+    if (k) load(k);
+  });
+
+  // first open uses ?k=, then the key is saved and cleaned out of the address bar,
+  // so the bookmark afterwards is just /check/coach/
+  var params = new URLSearchParams(window.location.search);
+  var fromUrl = params.get("k");
+  var saved = null;
+  try { saved = localStorage.getItem(STORE); } catch (e) { /* ignore */ }
+
+  if (fromUrl) {
+    if (window.history.replaceState) window.history.replaceState({}, "", window.location.pathname);
+    load(fromUrl);
+  } else if (saved) {
+    load(saved);
+  } else {
+    el("scr-key").classList.remove("hidden");
+  }
+})();
+</script>
+</body>
+</html>

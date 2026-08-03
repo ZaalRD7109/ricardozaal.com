@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Ninety Day Check - Ricardo Zaal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Palette matched to the live Ricardo Zaal booking page (scripts/rz-booking/build_booking.py) */
+  :root{
+    --ink:#04161c; --bg:#07222a; --panel:#0e3441; --panel2:#124351;
+    --line:rgba(255,255,255,.10); --accent:#20d3c2; --text:#eef8f7; --muted:#a9cbc8;
+    --warn:#ffb4a2; --ok:#7ee2a8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+  body{background:var(--bg); color:var(--text); min-height:100vh; display:flex; justify-content:center;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.5;}
+  .wrap{width:100%; max-width:520px; padding:20px 16px 48px;}
+  .brand{text-align:center; color:var(--accent); font-size:12px; letter-spacing:2.5px;
+    text-transform:uppercase; font-weight:800; margin-bottom:10px;}
+  h1{font-size:27px; line-height:1.2; font-weight:900; text-align:center; margin:6px 0 12px;}
+  h2{font-size:20px; font-weight:800; margin:0 0 8px;}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:20px 18px; margin-bottom:14px;}
+  p{color:var(--muted); font-size:16px; margin-bottom:11px;}
+  p strong{color:var(--text);}
+  .lead{color:var(--text); font-size:17px;}
+  label{display:block; font-weight:700; font-size:15px; margin:16px 0 6px; color:var(--text);}
+  label span{font-weight:400; color:var(--muted); font-size:14px;}
+  input[type=text]{width:100%; font-size:17px; padding:14px; border-radius:12px;
+    border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--text);
+    outline:none; font-family:inherit;}
+  input[type=text]:focus{border-color:var(--accent);}
+  button{display:block; width:100%; border:none; border-radius:14px; padding:16px 15px;
+    font-size:17px; font-weight:700; cursor:pointer; margin-top:11px; font-family:inherit; text-align:left;}
+  .primary{background:var(--accent); color:#04231f; font-weight:900; text-align:center; font-size:18px;}
+  .answer{background:var(--panel2); color:var(--text); border:1px solid var(--line);}
+  .answer:active{background:#18566a;}
+  .back{background:none; color:var(--muted); font-size:15px; width:auto; padding:12px 2px;
+    margin:4px 0 0; text-align:left; font-weight:400;}
+  .bar{height:8px; background:rgba(255,255,255,.08); border-radius:6px; overflow:hidden; margin:4px 0 6px;}
+  .bar div{height:100%; background:var(--accent); width:0%; transition:width .25s;}
+  .pcount{font-size:13px; color:var(--muted); text-align:right; margin-bottom:14px;}
+  .q{font-size:21px; line-height:1.35; font-weight:800; margin:8px 0 18px; color:var(--text);}
+  .qtag{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);
+    font-weight:800; margin-bottom:6px;}
+  .hidden{display:none;}
+  .consent{display:flex; gap:11px; align-items:flex-start; margin-top:18px;}
+  .consent input[type=checkbox]{width:26px; height:26px; flex:none; accent-color:var(--accent); margin-top:2px;}
+  .consentlbl{font-size:13px; color:var(--muted); font-weight:400; line-height:1.5; margin:0;}
+  .consentlbl a{color:var(--accent);}
+  .warn{color:var(--warn); font-size:14px; margin-top:11px;}
+  .note{font-size:13.5px; color:var(--muted); text-align:center; margin-top:14px;}
+  .note a{color:var(--accent);}
+
+  /* result */
+  .goal{background:var(--panel2); border-left:4px solid var(--accent); border-radius:0 10px 10px 0;
+    padding:13px 15px; margin-bottom:14px;}
+  .goal .lbl{font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);
+    font-weight:800; margin-bottom:3px;}
+  .goal .val{font-size:17px; color:var(--text); font-weight:700;}
+  .bignum{text-align:center; margin:6px 0 4px;}
+  .bignum .n{font-size:56px; font-weight:900; color:var(--accent); line-height:1;}
+  .bignum .of{font-size:15px; color:var(--muted); margin-top:6px;}
+  .wallrow{margin-bottom:13px;}
+  .wallrow .top{display:flex; justify-content:space-between; align-items:baseline; font-size:15px;}
+  .wallrow .nm{font-weight:700; color:var(--text);}
+  .wallrow .sc{color:var(--muted); font-size:13.5px;}
+  .wallrow.hi .nm{color:var(--accent);}
+  .sec{margin-bottom:15px;}
+  .sec h3{font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent);
+    font-weight:800; margin-bottom:5px;}
+  .sec p{color:var(--text); font-size:16px; margin:0;}
+  .flag{background:rgba(255,180,162,.10); border:1px solid rgba(255,180,162,.35);
+    border-radius:12px; padding:14px 15px; margin-bottom:14px;}
+  .flag h3{color:var(--warn); font-size:12px; letter-spacing:1.5px; text-transform:uppercase;
+    font-weight:800; margin-bottom:5px;}
+  .flag p{color:var(--text); font-size:16px; margin:0;}
+  .action{background:var(--panel2); border-radius:12px; padding:15px; margin-bottom:15px;}
+  .action h3{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);
+    font-weight:800; margin-bottom:5px;}
+  .action p{color:var(--text); font-size:16px; margin:0;}
+  .cost{font-size:17px; color:var(--text); font-weight:700; margin:4px 0 12px;}
+  .savestate{text-align:center; font-size:14px; margin-top:12px; color:var(--muted);}
+  .savestate.ok{color:var(--ok);}
+  .help{font-size:13px; color:var(--muted); text-align:center; margin-top:20px; line-height:1.55;}
+
+  /* headline block */
+  .preheadline{text-align:center; font-size:13.5px; font-weight:700; color:var(--accent);
+    margin-bottom:8px; line-height:1.4;}
+  .subhead{text-align:center; font-size:16px; color:var(--muted); margin:0 4px 16px; line-height:1.5;}
+  .card.plain{background:transparent; border:1px dashed var(--line);}
+  .minihead{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);
+    font-weight:800; margin-bottom:7px;}
+
+  /* right for you / not for you */
+  .forlist .fh{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:800;
+    margin:12px 0 6px;}
+  .forlist .fh.yes{color:var(--ok);}
+  .forlist .fh.no{color:var(--warn);}
+  .forlist ul{margin:0; padding-left:20px;}
+  .forlist li{color:var(--text); font-size:15.5px; margin-bottom:7px; line-height:1.5;}
+
+  /* FAQ, collapsed by default so the result page stays thumb-friendly */
+  details{border-top:1px solid var(--line); padding:12px 0 2px;}
+  details:first-of-type{border-top:none; padding-top:2px;}
+  summary{cursor:pointer; font-size:16px; font-weight:700; color:var(--text); list-style:none;
+    padding-right:22px; position:relative;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; position:absolute; right:2px; top:-2px; color:var(--accent);
+    font-size:22px; font-weight:700; line-height:1;}
+  details[open] summary::after{content:"-";}
+  details p{margin:9px 0 4px; font-size:15.5px; color:var(--muted);}
+
+  .undercta{text-align:center; font-size:13.5px; color:var(--muted); margin-top:9px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Ricardo Zaal</div>
+
+  <!-- ============ SCREEN 1: welcome ============ -->
+  <div id="scr-welcome">
+    <div class="preheadline">For the man everyone calls the strong one</div>
+    <h1>Ninety days from now, will anything be different?</h1>
+    <div class="subhead">Nine honest questions. At the end you see exactly how far you are from what you want, and the one thing actually in the way.</div>
+
+    <div class="card">
+      <p class="lead"><strong>Everyone calls you the strong one. Nobody asks if the strong one is okay.</strong></p>
+      <p>So you carry it. Work, home, church, all of it, and you have got good at looking like a man who has it handled. The people closest to you have no idea how heavy it actually is.</p>
+      <p>You have already tried. The books, the courses, the early mornings. You know what you should be doing, and that is the part that makes it worse.</p>
+      <p><strong>Nine questions. Two minutes. Nobody sees your answers but me.</strong></p>
+      <button class="primary" id="btn-begin">Show me where I am</button>
+    </div>
+
+    <div class="card plain">
+      <div class="minihead">Before you start</div>
+      <p>No login and no cost. Your answers come to me and nobody else, and you can ask me to delete them any time.</p>
+      <p>This is not a personality test and it will not put you in a box. It measures where you are right now, which is a thing that can change.</p>
+    </div>
+
+    <div class="note">Ricardo Zaal. Twelve years pastoring, twenty eight years in business, four kids, and about R70,000 spent on self help that did not move me. That last one is the reason this exists.</div>
+  </div>
+
+  <!-- ============ SCREEN 2: questions ============ -->
+  <div id="scr-quiz" class="hidden">
+    <div class="bar"><div id="pbar"></div></div>
+    <div class="pcount" id="pcount"></div>
+    <div class="card">
+      <div class="qtag" id="qtag"></div>
+      <div class="q" id="qtext"></div>
+      <div id="qanswers"></div>
+      <button class="back hidden" id="btn-back">Back</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 3: the gate ============ -->
+  <div id="scr-gate" class="hidden">
+    <h1>Where must I send it?</h1>
+    <div class="card">
+      <p>Your result is ready. It shows the one thing most in your way, how far you are from what you said you want, and one thing to do about it this week.</p>
+      <label for="fname">Your first name</label>
+      <input type="text" id="fname" placeholder="e.g. Ricardo" autocomplete="given-name">
+      <label for="wa">WhatsApp number <span>(so I can send it to you)</span></label>
+      <input type="text" id="wa" placeholder="061 234 5678" inputmode="tel" autocomplete="tel">
+      <label for="email">Email <span>(optional)</span></label>
+      <input type="text" id="email" placeholder="you@email.com" inputmode="email" autocomplete="email">
+      <div class="consent">
+        <input type="checkbox" id="consent">
+        <label for="consent" class="consentlbl">I agree that Ricardo Zaal may keep my answers and contact me about my result. My details are never shared or sold, and I can ask for them to be deleted at any time. <a href="/privacy" target="_blank" rel="noopener">Privacy notice</a>.</label>
+      </div>
+      <div class="warn hidden" id="gatewarn"></div>
+      <button class="primary" id="btn-result">Show me my result</button>
+    </div>
+    <div class="note">One number or email is enough. I do not spam and I do not sell your details.</div>
+  </div>
+
+  <!-- ============ SCREEN 4: result ============ -->
+  <div id="scr-result" class="hidden">
+    <h1 id="res-h1">Your result</h1>
+
+    <div class="card">
+      <div class="goal">
+        <div class="lbl">You said you want</div>
+        <div class="val" id="res-goal"></div>
+      </div>
+      <div class="bignum">
+        <div class="n" id="res-count"></div>
+        <div class="of" id="res-countline"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Where the weight sits</h2>
+      <p style="font-size:14px;margin-bottom:14px;">Three walls. This is how much each one is in your way right now.</p>
+      <div id="res-walls"></div>
+    </div>
+
+    <div class="flag hidden" id="res-flag">
+      <h3>Worth twenty minutes on its own</h3>
+      <p id="res-flagtext"></p>
+    </div>
+
+    <div class="card">
+      <h2 id="res-wallname"></h2>
+      <p class="lead" id="res-recognition" style="margin-bottom:14px;"></p>
+      <div class="sec"><h3>What is actually happening</h3><p id="res-diagnosis"></p></div>
+      <div class="sec"><h3>The part most men miss</h3><p id="res-insight"></p></div>
+      <div class="action">
+        <h3>One thing this week</h3>
+        <p id="res-action"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Is this even for you</h2>
+      <div class="forlist">
+        <div class="fh yes">This is for you if</div>
+        <ul>
+          <li>You are tired of being fine in public and flat at home.</li>
+          <li>You have already tried to sort it on your own.</li>
+          <li>You would rather talk to a man who has been in it than read another book about it.</li>
+        </ul>
+        <div class="fh no">This is not for you if</div>
+        <ul>
+          <li>You want a quick fix in one conversation.</li>
+          <li>You want somebody to agree with you. I will not.</li>
+          <li>You need treatment for a diagnosed condition. I am a coach and a pastor, not a therapist, and I will say so rather than take your money.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>The things men ask me</h2>
+      <details><summary>What does it cost?</summary>
+        <p>The twenty minutes costs nothing. If we carry on after that I will give you the number on the call. I am not putting a price in front of you before I know what you are carrying.</p></details>
+      <details><summary>Are you going to preach at me?</summary>
+        <p>No. I am a pastor and I am not going to hide that from you. But this is not a sermon and you are not going to be judged. You lead, I ask the questions.</p></details>
+      <details><summary>I do not have the time.</summary>
+        <p>Twenty minutes, once, in the evening after work. That is the whole ask.</p></details>
+      <details><summary>What if I break down?</summary>
+        <p>Then you break down. It would not be the first time in one of these conversations, and it does not change one thing about what I think of you.</p></details>
+      <details><summary>Who sees what I just answered?</summary>
+        <p>Me. Not your wife, not your church, nobody. Ask me to delete it and it is gone.</p></details>
+    </div>
+
+    <div class="card">
+      <h2>The honest bit</h2>
+      <p class="cost" id="res-cost"></p>
+      <p><strong>Ninety days from now is coming either way.</strong></p>
+      <p id="res-path-a"></p>
+      <p id="res-path-b"></p>
+      <p>The first conversation is twenty minutes, it costs nothing, and if I am not the right man for what you are carrying I will tell you straight.</p>
+      <a id="res-book" href="https://book.ricardozaal.com" style="text-decoration:none;display:block;">
+        <button class="primary">Talk it through with me</button>
+      </a>
+      <div class="undercta">Twenty minutes. Free. No pitch.</div>
+      <div class="savestate" id="savestate"></div>
+    </div>
+
+    <div class="help">
+      This is a mirror, not a diagnosis, and it is not therapy.<br>
+      If you are in real trouble tonight, please phone SADAG on 0800 567 567 or 0800 456 789. They answer 24 hours.
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   PURE-START
+   No DOM in this block. selftest.js pulls this exact block out of this exact
+   file and runs it in node, so the logic that is tested is the logic that
+   ships. Do not put document/window code between the markers.
+   ========================================================================== */
+
+// The three walls. Ricardo's locked framework (01-RR-Group/coaching-christian-men/PLAN.md).
+var WALLS = ["gap", "stick", "room"];
+
+// Tie-break order when two walls score level and the man's chosen outcome does
+// not settle it. Room first on purpose: not being able to say it out loud is
+// the wall that makes the other two heavier.
+var TIE_ORDER = ["room", "gap", "stick"];
+
+// Question 1. The promise, asked FIRST so everything after is measured against it.
+var OUTCOMES = [
+  { w: "gap",   t: "Monday stops undoing Sunday." },
+  { w: "stick", t: "I stop measuring myself against every other man." },
+  { w: "room",  t: "One person knows the real story, so I am not carrying it alone." }
+];
+
+// Question 2. Not scored. Drives the cost line at the end, off his own answer.
+var DURATIONS = [
+  { v: "under1", t: "Less than a year",          months: null },
+  { v: "1to3",   t: "One to three years",        months: 12 },
+  { v: "over3",  t: "More than three years",     months: 36 },
+  { v: "always", t: "As long as I can remember", months: null }
+];
+
+// The nine scored questions. Three per wall. Every answer is a real behaviour,
+// scored 0 to 3 for how much that wall is in the way. Behaviours, not self ratings.
+var QUESTIONS = [
+  { w: "gap", q: "Sunday morning, church parking lot. What is actually going on in you?",
+    a: [
+      { t: "Glad to be there. I walk in as I am.", v: 0 },
+      { t: "I am mostly thinking about who I need to speak to in there.", v: 1 },
+      { t: "I am still doing the week's sums in my head.", v: 2 },
+      { t: "I sit an extra minute to get my face right before I go in.", v: 3 }
+    ] },
+  { w: "gap", q: "By Monday at nine, how much of Sunday is left?",
+    a: [
+      { t: "Most of it. It carries me into the week.", v: 0 },
+      { t: "Some. It is gone by Wednesday.", v: 1 },
+      { t: "Almost none. Monday resets me.", v: 3 },
+      { t: "I stopped expecting it to carry.", v: 2 }
+    ] },
+  { w: "gap", q: "When the work pressure is at its worst, what happens to your prayer life?",
+    a: [
+      { t: "It goes up. That is when I pray most.", v: 0 },
+      { t: "About the same as always.", v: 1 },
+      { t: "I still do it, but it feels like talking to the ceiling.", v: 2 },
+      { t: "It goes quiet. I am too busy fighting.", v: 3 }
+    ] },
+
+  { w: "stick", q: "You see another man your age doing well. First honest reaction?",
+    a: [
+      { t: "Good for him. Genuinely.", v: 0 },
+      { t: "I want to know how he did it.", v: 1 },
+      { t: "I find the reason it does not really count.", v: 2 },
+      { t: "I work out where I should have been by now.", v: 3 }
+    ] },
+  { w: "stick", q: "Courses, books, programmes bought looking for the thing that finally moves you.",
+    a: [
+      { t: "One or two.", v: 0 },
+      { t: "A handful.", v: 1 },
+      { t: "I stopped buying. None of it worked.", v: 2 },
+      { t: "More than I would say out loud.", v: 3 }
+    ] },
+  { w: "stick", q: "Where you thought you would be by this age, against where you are.",
+    a: [
+      { t: "About where I expected.", v: 0 },
+      { t: "Behind on some things, fine on others.", v: 1 },
+      { t: "I stopped setting a place to be. It hurt less.", v: 2 },
+      { t: "Nowhere near it, and I think about that often.", v: 3 }
+    ] },
+
+  { w: "room", q: "Somebody at church asks how you are doing. What comes out?",
+    a: [
+      { t: "The truth, more or less.", v: 0 },
+      { t: "Depends who is asking.", v: 1 },
+      { t: "I answer with a question about them.", v: 2 },
+      { t: "Fine. Blessed. Every time.", v: 3 }
+    ] },
+  { w: "room", q: "The man you could send an honest bad week message to tonight.",
+    a: [
+      { t: "I have one and I would send it tonight.", v: 0 },
+      { t: "I have one and I would probably send it.", v: 1 },
+      { t: "Only my wife. Nobody else.", v: 2 },
+      { t: "Honestly, nobody.", v: 3 }
+    ] },
+  { w: "room", q: "Who around you knows what is actually going on in your life right now?",
+    a: [
+      { t: "A few people, properly.", v: 0 },
+      { t: "One person.", v: 1 },
+      { t: "They know a version of it.", v: 2 },
+      { t: "Nobody. They know the man who shows up.", v: 3 }
+    ] }
+];
+
+// The readings. One per wall, in Ricardo's own voice off his Wave 1 scripts.
+var READINGS = {
+  gap: {
+    name: "The Sunday Gap",
+    recognition: "You are not a fake. Your faith is real. It just cannot reach Monday at nine.",
+    diagnosis: "That gap between the man you are in church and the man you are the rest of the week is where a lot of us are quietly dying. It is not a faith problem. Nobody ever taught you what to do with the pressure Monday to Saturday, so you have been trying to feel Sunday all week and it keeps running out by Tuesday.",
+    insight: "Men in this spot almost always try to close it by adding more. More services, more devotions, more discipline. It does not work, because the gap is not made of effort. It is made of having no plan for the ordinary week.",
+    action: "Pick one small promise you can actually keep by Friday. One, not ten. A man who keeps one small promise to himself starts trusting himself again. That is where it turns."
+  },
+  stick: {
+    name: "The Measuring Stick",
+    recognition: "On paper you are doing fine. Inside you are always behind somebody, and you know exactly who.",
+    diagnosis: "You have been treating this as an information problem. The next course, the next book, the next system was going to be the one that finally made you enough. It never came, because the problem was never information. You already know what to do. The belief that you are behind is the thing, and no course fixes a belief.",
+    insight: "The measuring stick does not disappear when you finally get the thing. It moves. That is the tell that it was never about the number.",
+    action: "Stop asking what you need to learn next. Ask what you already know you should do and are avoiding. Write that one thing down tonight. Do it tomorrow. It is worth more than the next two thousand rand course."
+  },
+  room: {
+    name: "The Locked Room",
+    recognition: "Everyone calls you the strong one. Nobody asks if the strong one is okay.",
+    diagnosis: "You are the one people lean on at work, at home and at church, so you learned never to put your weight down anywhere. Who would hold it. So you carry all of it alone and call it strength. It is not strength. It is lonely, and of the three walls this is the one that makes the other two heavier.",
+    insight: "A man with one honest friend does not drown. A man with two hundred followers and no honest friend does. The number of people around you has almost nothing to do with it.",
+    action: "Find ONE man. Not a small group, not the whole church. One man you can send an honest message to. \"Bad week, brother. Can you pray?\" That is the whole message."
+  }
+};
+
+function outcomeByIndex(i) { return OUTCOMES[i] || null; }
+function durationByIndex(i) { return DURATIONS[i] || null; }
+
+// The cost line, built off his own stated duration. Nothing invented, no
+// manufactured urgency. If he has not told us a countable number we do not
+// pretend to have one.
+function costLine(durV) {
+  if (durV === "over3") {
+    return "You said this has been going on for more than three years. Another month on your own is a month you have already had at least thirty six times.";
+  }
+  if (durV === "1to3") {
+    return "You said this has been going on for a year or more. Another month on your own is a month you have already had at least twelve times.";
+  }
+  if (durV === "always") {
+    return "You said it has been like this as long as you can remember. That is the answer that matters most on this page, and it is not going to change by itself.";
+  }
+  return "You said this is fairly new. That is the best time to deal with it, before it becomes the normal way you live.";
+}
+
+// answers: array of 9 chosen point values, in QUESTIONS order.
+// outcomeIdx: index into OUTCOMES. durIdx: index into DURATIONS.
+function scoreAll(answers, outcomeIdx, durIdx) {
+  var totals = { gap: 0, stick: 0, room: 0 };
+  var against = 0;
+  for (var i = 0; i < QUESTIONS.length; i++) {
+    var v = Number(answers[i]);
+    if (!isFinite(v)) v = 0;
+    totals[QUESTIONS[i].w] += v;
+    if (v >= 2) against++;              // "pulling against you" = a 2 or a 3
+  }
+
+  var best = -1, tied = [];
+  for (var k = 0; k < WALLS.length; k++) {
+    var w = WALLS[k];
+    if (totals[w] > best) { best = totals[w]; tied = [w]; }
+    else if (totals[w] === best) { tied.push(w); }
+  }
+
+  var chosen = outcomeByIndex(outcomeIdx);
+  var wantWall = chosen ? chosen.w : null;
+
+  var top;
+  if (tied.length === 1) {
+    top = tied[0];
+  } else if (wantWall && tied.indexOf(wantWall) !== -1) {
+    top = wantWall;                      // his own pick settles a tie
+  } else {
+    top = null;
+    for (var t = 0; t < TIE_ORDER.length; t++) {
+      if (tied.indexOf(TIE_ORDER[t]) !== -1) { top = TIE_ORDER[t]; break; }
+    }
+  }
+
+  // second highest, only named when it is genuinely close behind
+  var second = null, secondBest = -1;
+  for (var s = 0; s < WALLS.length; s++) {
+    var w2 = WALLS[s];
+    if (w2 === top) continue;
+    if (totals[w2] > secondBest) { secondBest = totals[w2]; second = w2; }
+  }
+  if (secondBest < 0 || (totals[top] - secondBest) > 2) second = null;
+
+  return {
+    totals: totals,
+    against: against,
+    total_questions: QUESTIONS.length,
+    top: top,
+    second: second,
+    want_wall: wantWall,
+    outcome_text: chosen ? chosen.t : "",
+    duration: durationByIndex(durIdx) ? durationByIndex(durIdx).v : "",
+    // the sharpest output: he is aiming at one wall, his answers say another
+    mismatch: !!(wantWall && top && wantWall !== top),
+    all_clear: against === 0
+  };
+}
+
+/* PURE-END */
+
+/* ---------------- everything below touches the DOM ---------------- */
+(function () {
+  "use strict";
+
+  var API = "https://rmurdihrhcxevtzkrbmx.supabase.co/functions/v1/rz-check";
+  // save-only key, baked into the page on purpose: it cannot read anybody's data
+  var KEY = "rzc-m-2b6f90ae51c74d83a917";
+
+  var el = function (id) { return document.getElementById(id); };
+  var show = function (id) {
+    ["scr-welcome", "scr-quiz", "scr-gate", "scr-result"].forEach(function (s) {
+      el(s).classList.toggle("hidden", s !== id);
+    });
+    window.scrollTo(0, 0);
+  };
+
+  // step 0 = outcome, step 1 = duration, steps 2..10 = the nine questions
+  var TOTAL = 2 + QUESTIONS.length;
+  var step = 0;
+  var outcomeIdx = null, durIdx = null;
+  var answers = [];
+
+  function render() {
+    var pct = Math.round((step / TOTAL) * 100);
+    el("pbar").style.width = pct + "%";
+    el("pcount").textContent = "Question " + (step + 1) + " of " + TOTAL;
+    el("btn-back").classList.toggle("hidden", step === 0);
+
+    var tag, question, opts;
+    if (step === 0) {
+      tag = "Start here";
+      question = "Ninety days from today. Which one of these do you most want to be true?";
+      opts = OUTCOMES.map(function (o) { return o.t; });
+    } else if (step === 1) {
+      tag = "How long";
+      question = "How long has it been like this?";
+      opts = DURATIONS.map(function (d) { return d.t; });
+    } else {
+      var qi = step - 2;
+      tag = "Question " + (qi + 1) + " of " + QUESTIONS.length;
+      question = QUESTIONS[qi].q;
+      opts = QUESTIONS[qi].a.map(function (a) { return a.t; });
+    }
+
+    el("qtag").textContent = tag;
+    el("qtext").textContent = question;
+    var box = el("qanswers");
+    box.innerHTML = "";
+    opts.forEach(function (text, i) {
+      var b = document.createElement("button");
+      b.className = "answer";
+      b.textContent = text;
+      b.addEventListener("click", function () { choose(i); });
+      box.appendChild(b);
+    });
+  }
+
+  function choose(i) {
+    if (step === 0) { outcomeIdx = i; }
+    else if (step === 1) { durIdx = i; }
+    else { answers[step - 2] = QUESTIONS[step - 2].a[i].v; }
+
+    if (step === TOTAL - 1) { show("scr-gate"); return; }
+    step++;
+    render();
+  }
+
+  el("btn-begin").addEventListener("click", function () {
+    show("scr-quiz");
+    step = 0;
+    render();
+  });
+
+  el("btn-back").addEventListener("click", function () {
+    if (step > 0) { step--; render(); }
+  });
+
+  function validPhone(s) { return (s.replace(/[^0-9]/g, "").length >= 9); }
+  function validEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+  el("btn-result").addEventListener("click", function () {
+    var name = el("fname").value.trim();
+    var wa = el("wa").value.trim();
+    var email = el("email").value.trim();
+    var warn = el("gatewarn");
+    warn.classList.add("hidden");
+
+    if (!name) { warn.textContent = "Please put your first name in."; warn.classList.remove("hidden"); return; }
+    if (!wa && !email) { warn.textContent = "Please leave a WhatsApp number or an email so I can send it to you."; warn.classList.remove("hidden"); return; }
+    if (wa && !validPhone(wa)) { warn.textContent = "That number looks short. Please check it."; warn.classList.remove("hidden"); return; }
+    if (email && !validEmail(email)) { warn.textContent = "That email does not look right. Please check it."; warn.classList.remove("hidden"); return; }
+    if (!el("consent").checked) { warn.textContent = "Please tick the box so I am allowed to keep your answers and send you the result."; warn.classList.remove("hidden"); return; }
+
+    var r = scoreAll(answers, outcomeIdx, durIdx);
+    paint(name, r);
+    show("scr-result");
+    save(name, wa, email, r);
+  });
+
+  function paint(name, r) {
+    var reading = READINGS[r.top];
+    el("res-h1").textContent = name + ", here is where you are";
+    el("res-goal").textContent = r.outcome_text;
+
+    el("res-count").textContent = r.against;
+    if (r.all_clear) {
+      el("res-countline").textContent = "of the 9 things you answered are pulling against that. That is unusual, and worth reading below.";
+    } else {
+      el("res-countline").textContent = "of the 9 things you told me are pulling against the thing you just said you want.";
+    }
+
+    var box = el("res-walls");
+    box.innerHTML = "";
+    WALLS.forEach(function (w) {
+      var row = document.createElement("div");
+      row.className = "wallrow" + (w === r.top ? " hi" : "");
+      var pct = Math.round((r.totals[w] / 9) * 100);
+      row.innerHTML =
+        '<div class="top"><span class="nm"></span><span class="sc"></span></div>' +
+        '<div class="bar"><div style="width:' + pct + '%"></div></div>';
+      row.querySelector(".nm").textContent = READINGS[w].name;
+      row.querySelector(".sc").textContent = r.totals[w] + " out of 9";
+      box.appendChild(row);
+    });
+
+    if (r.mismatch) {
+      // no case surgery on his own words: two of the three outcomes start with
+      // a proper noun ("Monday", "I"), so lowercasing them reads wrong
+      el("res-flagtext").textContent =
+        "You said you want this: " + r.outcome_text +
+        " Your answers say the wall actually in the way is " + READINGS[r.top].name +
+        ". Men work on the wrong one of these for years. That is the single best reason to take twenty minutes and talk it through.";
+      el("res-flag").classList.remove("hidden");
+    } else {
+      el("res-flag").classList.add("hidden");
+    }
+
+    el("res-wallname").textContent = reading.name;
+    el("res-recognition").textContent = reading.recognition;
+    el("res-diagnosis").textContent = reading.diagnosis +
+      (r.second ? " " + READINGS[r.second].name + " is sitting right behind it." : "");
+    el("res-insight").textContent = reading.insight;
+    el("res-action").textContent = reading.action;
+    el("res-cost").textContent = costLine(r.duration);
+
+    // the two-path contrast. The month is worked out from today, so it is
+    // always ninety real days away and no date is ever hardcoded.
+    var then = new Date();
+    then.setDate(then.getDate() + 90);
+    var MONTHS = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    el("res-path-a").textContent =
+      "One way, it is " + MONTHS[then.getMonth()] +
+      " and you are reading something like this again. Still the strong one. Still nobody knowing.";
+    el("res-path-b").textContent =
+      "The other way, you have had six conversations with one man who knows the whole thing, and " +
+      READINGS[r.top].name + " is not the biggest thing in your week anymore.";
+  }
+
+
+  function save(name, wa, email, r) {
+    var state = el("savestate");
+    state.textContent = "Saving your result...";
+    fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        k: KEY,
+        name: name,
+        whatsapp: wa || null,
+        email: email || null,
+        consent: true,
+        outcome: r.outcome_text,
+        want_wall: r.want_wall,
+        duration: r.duration,
+        totals: r.totals,
+        against: r.against,
+        top_wall: r.top,
+        second_wall: r.second,
+        mismatch: r.mismatch,
+        result: {
+          wall_name: READINGS[r.top].name,
+          recognition: READINGS[r.top].recognition,
+          diagnosis: READINGS[r.top].diagnosis,
+          insight: READINGS[r.top].insight,
+          action: READINGS[r.top].action,
+          cost: costLine(r.duration)
+        }
+      })
+    }).then(function (res) { return res.json().catch(function () { return {}; }); })
+      .then(function (out) {
+        if (out && out.ok) {
+          state.textContent = out.emailed
+            ? "Saved. A copy is on its way to your email."
+            : "Saved. Ricardo has your result.";
+          state.classList.add("ok");
+        } else {
+          state.textContent = "Your result is on the screen, but I could not save a copy. Screenshot this page and bring it to the call.";
+        }
+      })
+      .catch(function () {
+        state.textContent = "Your result is on the screen, but I could not save a copy. Screenshot this page and bring it to the call.";
+      });
+  }
+
+  // keep the submit key out of the address bar, same as the FGI tools
+  if (window.location.search.indexOf("k=") !== -1 && window.history.replaceState) {
+    window.history.replaceState({}, "", window.location.pathname);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,39 @@
 {
   "redirects": [
-    { "source": "/coaching", "destination": "/", "permanent": true },
-    { "source": "/coaching/", "destination": "/", "permanent": true }
-  ]
+    {
+      "source": "/coaching",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/coaching/",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/check/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ]
+    },
+    {
+      "source": "/check",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true
 }
