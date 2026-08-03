@@ -164,6 +164,21 @@ table.cmp td:last-child{white-space:nowrap}
 table.cmp th{background:rgba(32,211,194,.10);font-weight:800;color:var(--text)}
 table.cmp td{color:var(--muted)}
 .tablewrap{overflow-x:auto}
+.tiers{display:grid;gap:16px;margin:22px 0 0}
+.tier{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.tier.pick{border:2px solid var(--accent);box-shadow:0 18px 44px rgba(32,211,194,.18)}
+.tier .flag{position:absolute;top:-13px;left:24px;background:var(--accent);color:#04231f;
+  font-size:11.5px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.tier h3{margin:0 0 2px;font-size:21px;letter-spacing:-.02em}
+.tier .len{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+.tier .amt{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1;margin:0}
+.tier .per{color:var(--accent);font-size:15px;font-weight:700;margin:6px 0 0}
+.tier .plan{color:var(--muted);font-size:13.5px;margin:4px 0 16px}
+.tier ul{list-style:none;margin:0;padding:0}
+.tier ul li{position:relative;padding-left:26px;margin:9px 0;font-size:15.5px;color:var(--muted)}
+.tier ul li:before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px rgba(32,211,194,.13)}
+.tier .btn{width:100%;margin-top:18px;padding:15px;font-size:16px}
 .note{border:1px dashed rgba(255,255,255,.2);border-radius:16px;padding:20px;
   font-size:16px;color:var(--muted);margin-top:44px}
 .note strong{color:var(--text)}
@@ -196,6 +211,7 @@ footer a:hover{color:var(--accent)}
   section{padding:90px 0}
   .grid.three{grid-template-columns:repeat(3,1fr)}
   .paths{grid-template-columns:1fr 1fr}
+  .tiers{grid-template-columns:repeat(3,1fr);align-items:start}
   .offer{padding:40px}
   .fgrid{grid-template-columns:2fr 1fr 1fr}
   .about-wrap{display:grid;grid-template-columns:190px 1fr;gap:38px;align-items:start}
@@ -471,18 +487,58 @@ footer a:hover{color:var(--accent)}
 
     <h2 style="margin-top:52px">What it costs.</h2>
     <p>Work out what this year has already cost you first. The nights you did not sleep. What your wife and your children have been getting instead of you. The chances you did not take because you were too tired to see them.</p>
-    <div class="tablewrap">
-    <table class="cmp">
-      <thead><tr><th>&nbsp;</th><th>What you get</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr><th>The first call</th><td>Twenty minutes, to see if we fit</td><td><b>Free</b></td></tr>
-        <tr><th>One conversation</th><td>One session of ninety minutes</td><td><b>R2&nbsp;000</b></td></tr>
-        <tr><th>The Room</th><td>Six sessions over twelve weeks</td><td><b>R12&nbsp;000</b></td></tr>
-        <tr><th>The Room, six months</th><td>Twelve sessions over six months</td><td><b>R21&nbsp;000</b></td></tr>
-      </tbody>
-    </table>
+    <div class="tiers">
+
+      <div class="tier">
+        <h3>Six months</h3>
+        <p class="len">Twelve sessions</p>
+        <p class="amt">R21 000</p>
+        <p class="per">R875 a week</p>
+        <p class="plan">Or R3 700 a month for six months. R22 200 in total.</p>
+        <ul>
+          <li>Everything in The Room, twice over</li>
+          <li>The second half, where we get to what started it</li>
+          <li>Six emergency calls instead of one</li>
+          <li>A three hour session each quarter</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://book.ricardozaal.com/">Book a call</a>
+      </div>
+
+      <div class="tier pick">
+        <span class="flag">Most men start here</span>
+        <h3>The Room</h3>
+        <p class="len">Six sessions over twelve weeks</p>
+        <p class="amt">R12 000</p>
+        <p class="per">R1 000 a week</p>
+        <p class="plan">Or R4 200 a month for three months. R12 600 in total.</p>
+        <ul>
+          <li>Six sessions of ninety minutes, one every second week</li>
+          <li>A written intake so session one starts at the real thing</li>
+          <li>One action after every session, in writing</li>
+          <li>A message a week, answered within two working days</li>
+          <li>One emergency call inside forty eight hours</li>
+          <li>A written close at the end that you keep</li>
+        </ul>
+        <a class="btn btn-main" href="https://book.ricardozaal.com/">Book my free call</a>
+      </div>
+
+      <div class="tier">
+        <h3>One conversation</h3>
+        <p class="len">A single session of ninety minutes</p>
+        <p class="amt">R2 000</p>
+        <p class="per">One thing, dealt with</p>
+        <p class="plan">If you carry on, this comes off the price.</p>
+        <ul>
+          <li>For one thing you cannot see past</li>
+          <li>You leave with one action, in writing</li>
+          <li>If it was not worth it, you do not pay for it</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://book.ricardozaal.com/">Book a call</a>
+      </div>
+
     </div>
-    <p class="muted">Payment plans are available and you can pay monthly. If you start with one conversation and carry on, what you paid for it comes off the price.</p>
+
+    <p class="muted">Every price above is the whole price. No VAT on top, no admin fee, nothing added later. The monthly totals are shown so you can see exactly what you pay either way.</p>
     <p class="muted">There are five places. As of today there is room. When it is full you go on a list and you wait, because I would rather you wait than get half of me.</p>
   </div>
 </section>
