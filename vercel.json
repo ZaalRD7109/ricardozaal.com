@@ -33,7 +33,22 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/unsub",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/unsub",
+      "destination": "https://rtnbqtmepkwfgqhebmvv.supabase.co/functions/v1/ten"
+    }
+  ]
 }
